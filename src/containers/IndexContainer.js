@@ -4,6 +4,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
+import {onButtonClicked} from '../data/userState';
+
 class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -35,6 +37,10 @@ class IndexContainer extends React.Component {
     return -((x - 1.25) * (x + 1.25)) + c;
   }
 
+  componentDidMount() {
+    this.props.onButtonClicked('poop');
+  }
+
   onButtonClick() {
     console.log('clicked');
   }
@@ -56,7 +62,7 @@ class IndexContainer extends React.Component {
           }}
           material={{color}}
           position={{x: 0, y: 0.5, z: -2}}
-          animation={{property: 'position', dur: 2000, to: `${x} ${y} -2`}}
+          animation={{property: 'position', dur: 2000, delay: index * 500, to: `${x} ${y} -2`}}
           rotation="-90 0 0"
           events={{
             click: this.onButtonClick,
@@ -69,7 +75,12 @@ class IndexContainer extends React.Component {
   render () {
     return (
       <Scene>
+        <a-assets>
+          <a-asset-item id="tree-obj" src="/table_1.obj"></a-asset-item>
+          <a-asset-item id="tree-mtl" src="/table_1.mtl"></a-asset-item>
+        </a-assets>
         {this.renderButtons()}
+        <Entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position="0 0 -3"/>
         <Entity
           geometry={{
             primitive: 'plane',
@@ -94,7 +105,9 @@ const mapStateToProps = () => {
 };
 
 const mapDispatchToProps = () => {
-  return {};
+  return {
+    onButtonClicked
+  };
 };
 
 export default connect(
