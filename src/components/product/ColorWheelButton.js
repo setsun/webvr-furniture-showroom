@@ -12,6 +12,13 @@ class ColorWheelButton extends React.Component {
     onColorChange: PropTypes.func,
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    }
+  }
+
   getX(currentPartition, min, max) {
     const partitions = this.props.colors.length - 1;
     const diff = max - min;
@@ -39,7 +46,7 @@ class ColorWheelButton extends React.Component {
           key={`${color}-${index}`}
           geometry={{
             primitive: 'cylinder',
-            radius: 0.1,
+            radius: 0.2,
             height: 0.01,
           }}
           material={{color}}
@@ -65,7 +72,7 @@ class ColorWheelButton extends React.Component {
         <Entity
           geometry={{
             primitive: 'cylinder',
-            radius: 0.15,
+            radius: 0.3,
             height: 0.01,
           }}
           material={{color: 'black'}}

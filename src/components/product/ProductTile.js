@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Entity} from 'aframe-react';
 
-import ColorWheelButton from '../buttons/ColorWheelButton';
+import ProductInfoBubble from './ProductInfoBubble';
 
 class ProductTile extends React.Component {
   static propTypes = {
@@ -20,13 +20,13 @@ class ProductTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonActive: false,
+      infoOpen: false,
     }
   }
 
-  toggleTileActive() {
+  toggleInfoOpen() {
     this.setState({
-      buttonActive: !this.state.buttonActive
+      infoOpen: !this.state.infoOpen
     });
   }
 
@@ -34,24 +34,20 @@ class ProductTile extends React.Component {
     const {
       position
     } = this.props;
+    const {
+      infoOpen
+    } = this.state;
 
     return (
       <Entity position={position}>
-        <Entity>
-          <ColorWheelButton colors={[
-            '#4CC3D9',
-            '#EF2D5E',
-            '#FFC65D',
-            '#8200AF',
-            '#999999',
-            '#FCF838'
-          ]}/>
+        <Entity position="0 0.5 0">
+          {infoOpen && <ProductInfoBubble />}
         </Entity>
         <a-entity
           obj-model="obj: #tree-obj; mtl: #tree-mtl"
           scale="0.5 0.5 0.5"
           events={{
-            click: this.toggleTileActive,
+            click: this.toggleInfoOpen,
           }}
         />
       </Entity>

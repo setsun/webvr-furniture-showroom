@@ -14,8 +14,8 @@ class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showCartCarousel: false,
-      showCategoriesCarousel: false,
+      cartCarouselOpen: true,
+      categoriesCarouselOpen: true,
     }
   }
 
@@ -23,17 +23,45 @@ class IndexContainer extends React.Component {
     // Test redux actions here
   }
 
+  renderAssets() {
+    return (
+      <a-assets>
+        <a-asset-item id="tree-obj" src="/assets/table_1/Jet_table.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="/assets/table_1/Jet_table.mtl"></a-asset-item>
+      </a-assets>
+    );
+  }
+
+  renderController() {
+    return (
+      <Entity daydream-controls="hand: right" />
+    );
+  }
+
+  renderRoom() {
+    return (
+      <Entity>
+        <ProductTile />
+      </Entity>
+    );
+  }
+
+  renderCartCarousel() {
+    return this.state.cartCarouselOpen && <CartCarousel />
+  }
+
+  renderCategoriesCarousel() {
+    return this.state.categoriesCarouselOpen && <CategoriesCarousel />
+  }
+
   render () {
     return (
       <Scene>
-        <a-assets>
-          <a-asset-item id="tree-obj" src="/assets/table_1/Jet_table.obj"></a-asset-item>
-          <a-asset-item id="tree-mtl" src="/assets/table_1/Jet_table.mtl"></a-asset-item>
-        </a-assets>
-        <Entity daydream-controls="hand: right" />
-        <ProductTile />
-        <CartCarousel />
-        <CategoriesCarousel />
+        {this.renderAssets()}
+        {this.renderController()}
+        {this.renderRoom()}
+        {this.renderCartCarousel()}
+        {this.renderCategoriesCarousel()}
       </Scene>
     );
   }
