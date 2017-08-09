@@ -3,12 +3,17 @@ import 'aframe-animation-component';
 import 'aframe-particle-system-component';
 import 'babel-polyfill';
 
-import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
+import {createStore} from 'redux'
+
+import rootReducer from './data/rootReducer';
 
 import AppContainer from './containers/AppContainer';
+
+const store = createStore(rootReducer, {});
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +23,9 @@ class App extends React.Component {
   render () {
     return (
       <BrowserRouter>
-        <AppContainer />
+        <Provider store={store}>
+          <AppContainer />
+        </Provider>
       </BrowserRouter>
     );
   }

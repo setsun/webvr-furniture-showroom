@@ -1,6 +1,7 @@
 import 'aframe-animation-component';
 
 import React from 'react';
+import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
 class IndexContainer extends React.Component {
@@ -88,4 +89,15 @@ class IndexContainer extends React.Component {
   }
 }
 
-export default IndexContainer;
+const mapStateToProps = () => {
+  return {};
+};
+
+const mapDispatchToProps = () => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(IndexContainer);
