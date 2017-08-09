@@ -8,15 +8,11 @@ import ProductTile from '../components/product/ProductTile';
 import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 
-import {onButtonClicked} from '../data/userState';
+import {onTextureChange} from '../data/userState';
 
 class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-    this.props.onButtonClicked('poop');
   }
 
   render () {
@@ -41,7 +37,7 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = () => {
   return {
-    onButtonClicked
+    onButtonClick: onTextureChange
   };
 };
 
