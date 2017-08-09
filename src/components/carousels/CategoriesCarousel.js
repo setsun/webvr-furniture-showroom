@@ -1,6 +1,5 @@
 import 'aframe-animation-component';
 import 'aframe-layout-component';
-import 'aframe-svgfile-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -43,7 +42,14 @@ class CategoriesCarousel extends React.Component {
 
   render() {
     return (
-      <Entity position="0 1.5 0" rotation="-90 0 0">
+      <Entity
+        position="0 2.5 0"
+        rotation="-90 0 0"
+        animation={{
+          property: 'position',
+          dur: 1500,
+          to: '0 1.5 0'
+        }}>
         {this.renderRing()}
         {this.renderProducts()}
       </Entity>
