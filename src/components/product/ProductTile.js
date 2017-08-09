@@ -9,7 +9,12 @@ import ColorWheelButton from '../buttons/ColorWheelButton';
 
 class ProductTile extends React.Component {
   static propTypes = {
+    position: PropTypes.string,
     product: PropTypes.object,
+  }
+
+  static defaultProps = {
+    position: "0 0.75 -2"
   }
 
   constructor(props) {
@@ -26,13 +31,20 @@ class ProductTile extends React.Component {
   }
 
   render() {
+    const {
+      position
+    } = this.props;
+
     return (
-      <Entity>
+      <Entity position={position}>
         <Entity>
           <ColorWheelButton colors={[
             '#4CC3D9',
             '#EF2D5E',
             '#FFC65D',
+            '#8200AF',
+            '#999999',
+            '#FCF838'
           ]}/>
         </Entity>
         <a-entity
