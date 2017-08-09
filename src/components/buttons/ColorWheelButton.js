@@ -49,7 +49,7 @@ class ColorWheelButton extends React.Component {
             height: 0.01,
           }}
           material={{color}}
-          position={{x: 0, y: 0.5, z: -2}}
+          position={{x: 0, y: 0.75, z: -2}}
           animation={{
             property: 'position',
             dur: 2000,
@@ -68,6 +68,16 @@ class ColorWheelButton extends React.Component {
   render() {
     return (
       <Entity>
+        <Entity
+          geometry={{
+            primitive: 'cylinder',
+            radius: 0.35,
+            height: 0.01,
+          }}
+          material={{color: 'black'}}
+          position={{x: 0, y: 0.75, z: -1.99}}
+          rotation="-90 0 0"
+        />
         {this.renderButtons()}
       </Entity>
     );
