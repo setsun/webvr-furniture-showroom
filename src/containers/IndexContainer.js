@@ -18,6 +18,7 @@ class IndexContainer extends React.Component {
     this.renderButtons = this.renderButtons.bind(this);
     this.getX = this.getX.bind(this);
     this.getY = this.getY.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   getX(currentPartition, min, max) {
@@ -33,6 +34,10 @@ class IndexContainer extends React.Component {
     return -((x - 1.25) * (x + 1.25)) + c;
   }
 
+  onButtonClick() {
+    console.log('clicked');
+  }
+
   renderButtons() {
     const {colors} = this.state;
 
@@ -42,6 +47,7 @@ class IndexContainer extends React.Component {
 
       return (
         <Entity
+          key={`${color}-${index}`}
           geometry={{
             primitive: 'cylinder',
             radius: 0.25,
@@ -51,6 +57,9 @@ class IndexContainer extends React.Component {
           position={{x: 0, y: 0.5, z: -2}}
           animation={{property: 'position', dur: 2000, to: `${x} ${y} -2`}}
           rotation="-90 0 0"
+          events={{
+            click: this.onButtonClick,
+          }}
         />
       )
     });
