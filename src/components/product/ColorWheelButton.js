@@ -92,7 +92,7 @@ class ColorWheelButton extends React.Component {
             radius: 0.1,
             height: 0.01,
           }}
-          material={{color: '#A2A2A2'}}
+          material={{color: '#37474F'}}
           position={{x: 0, y: 0, z: 0.01}}
           rotation="-90 0 0"
         />
