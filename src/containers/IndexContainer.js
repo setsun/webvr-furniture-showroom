@@ -6,6 +6,7 @@ import {Entity, Scene} from 'aframe-react';
 
 import ColorWheelButton from '../components/buttons/ColorWheelButton';
 import CartCarousel from '../components/carousels/CartCarousel';
+import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 
 import {onButtonClicked} from '../data/userState';
 
@@ -37,6 +38,7 @@ class IndexContainer extends React.Component {
           colors={this.state.colors}
         />
         <CartCarousel />
+        <CategoriesCarousel />
       </Scene>
     );
   }
