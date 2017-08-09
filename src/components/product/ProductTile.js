@@ -1,9 +1,10 @@
 import 'aframe-animation-component';
+import {component} from 'aframe-layout';
 
 import React from 'react';
 import {Entity} from 'aframe-react';
 
-class ColorWheelButton extends React.Component {
+class ProductTile extends React.Component {
   render() {
     return (
       <Entity>
@@ -13,4 +14,4 @@ class ColorWheelButton extends React.Component {
   }
 }
 
-export default ColorWheelButton;
+export default ProductTile;
