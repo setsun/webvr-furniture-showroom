@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
 import ColorWheelButton from '../components/buttons/ColorWheelButton';
+import CartCarousel from '../components/carousels/CartCarousel';
 
 import {onButtonClicked} from '../data/userState';
 
@@ -35,24 +36,7 @@ class IndexContainer extends React.Component {
         <ColorWheelButton
           colors={this.state.colors}
         />
-        <a-entity
-          obj-model="obj: #tree-obj; mtl: #tree-mtl"
-          position="0 0 -3"
-        />
-        <Entity
-          geometry={{
-            primitive: 'plane',
-            width: 8,
-            height: 8
-          }}
-          material={{color: '#999999'}}
-          position="0 0 -4"
-          rotation={{x: -90, y: 0, z: 0}}
-        />
-        <Entity
-          geometry={{primitive: 'plane'}}
-          material={{color: '#ECECEC'}}
-        />
+        <CartCarousel />
       </Scene>
     );
   }
