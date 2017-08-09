@@ -4,6 +4,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
+import ColorWheelButton from '../components/buttons/ColorWheelButton';
+
 import {onButtonClicked} from '../data/userState';
 
 class IndexContainer extends React.Component {
@@ -16,64 +18,10 @@ class IndexContainer extends React.Component {
         '#FFC65D',
       ]
     }
-
-    this.renderButtons = this.renderButtons.bind(this);
-    this.getX = this.getX.bind(this);
-    this.getY = this.getY.bind(this);
-    this.onButtonClick = this.onButtonClick.bind(this);
-  }
-
-  getX(currentPartition, min, max) {
-    const partitions = this.state.colors.length - 1;
-    const diff = max - min;
-
-    return ((currentPartition / partitions) * diff) + min;
-  }
-
-  getY(x) {
-    const c = 0.5;
-
-    return -((x - 1.25) * (x + 1.25)) + c;
   }
 
   componentDidMount() {
     this.props.onButtonClicked('poop');
-  }
-
-  onButtonClick() {
-    console.log('clicked');
-  }
-
-  renderButtons() {
-    const {colors} = this.state;
-
-    return colors.map((color, index) => {
-      const x = this.getX(index, -1, 1);
-      const y = this.getY(x);
-
-      return (
-        <Entity
-          key={`${color}-${index}`}
-          geometry={{
-            primitive: 'cylinder',
-            radius: 0.25,
-            height: 0.01,
-          }}
-          material={{color}}
-          position={{x: 0, y: 0.5, z: -2}}
-          animation={{
-            property: 'position',
-            dur: 2000,
-            delay: index * 500,
-            to: `${x} ${y} -2`
-          }}
-          rotation="-90 0 0"
-          events={{
-            click: this.onButtonClick,
-          }}
-        />
-      )
-    });
   }
 
   render () {
@@ -84,7 +32,9 @@ class IndexContainer extends React.Component {
           <a-asset-item id="tree-mtl" src="/assets/table_1/table_1.mtl"></a-asset-item>
         </a-assets>
         <Entity daydream-controls="hand: right" />
-        {this.renderButtons()}
+        <ColorWheelButton
+          colors={this.state.colors}
+        />
         <a-entity
           obj-model="obj: #tree-obj; mtl: #tree-mtl"
           position="0 0 -3"

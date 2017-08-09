@@ -9,6 +9,7 @@
     "aframe-react": "^4.3.0",
     "aframe-svgfile-component": "^1.1.2",
     "babel-polyfill": "^6.3.14",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
