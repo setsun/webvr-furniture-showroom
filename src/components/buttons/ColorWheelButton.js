@@ -12,10 +12,6 @@ class ColorWheelButton extends React.Component {
     onColorChange: PropTypes.func,
   }
 
-  constructor(props) {
-    super(props);
-  }
-
   getX(currentPartition, min, max) {
     const partitions = this.props.colors.length - 1;
     const diff = max - min;
