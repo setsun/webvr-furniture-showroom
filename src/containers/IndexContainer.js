@@ -13,10 +13,14 @@ import {onTextureChange} from '../data/userState';
 class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showCartCarousel: false,
+      showCategoriesCarousel: false,
+    }
   }
 
   componentDidMount() {
-
+    // Test redux actions here
   }
 
   render () {
