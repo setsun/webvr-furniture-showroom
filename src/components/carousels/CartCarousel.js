@@ -1,6 +1,5 @@
 import 'aframe-animation-component';
 import 'aframe-layout-component';
-import 'aframe-svgfile-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -40,7 +39,15 @@ class CartCarousel extends React.Component {
 
   render() {
     return (
-      <Entity position="0 0 0" rotation="-90 0 0">
+      <Entity
+        position="0 0 0"
+        rotation="-90 0 0"
+        scale="0 0 0"
+        animation={{
+          property: 'scale',
+          dur: 2000,
+          to: '1 1 1'
+        }}>
         {this.renderRing()}
         {this.renderProducts()}
       </Entity>
