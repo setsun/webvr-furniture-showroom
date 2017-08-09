@@ -30,7 +30,7 @@ class IndexContainer extends React.Component {
   getY(x) {
     const c = 0.5;
 
-    return -((x - 1) * (x + 1)) + c;
+    return -((x - 1.25) * (x + 1.25)) + c;
   }
 
   renderButtons() {
@@ -44,11 +44,12 @@ class IndexContainer extends React.Component {
         <Entity
           geometry={{
             primitive: 'cylinder',
-            radius: 0.25
+            radius: 0.25,
+            height: 0.01,
           }}
           material={{color}}
-          position={{x: 0, y: 0.5, z: -3}}
-          animation={{property: 'position', delay: 100*index, dur: 2000, to: `${x} ${y} -3`}}
+          position={{x: 0, y: 0.5, z: -2}}
+          animation={{property: 'position', dur: 2000, to: `${x} ${y} -2`}}
           rotation="-90 0 0"
         />
       )
@@ -62,10 +63,10 @@ class IndexContainer extends React.Component {
         <Entity
           geometry={{
             primitive: 'plane',
-            width: 4,
-            height: 4
+            width: 8,
+            height: 8
           }}
-          material={{color: '#7BC8A4'}}
+          material={{color: '#999999'}}
           position="0 0 -4"
           rotation={{x: -90, y: 0, z: 0}}
         />
