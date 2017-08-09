@@ -57,6 +57,7 @@ class IndexContainer extends React.Component {
   render () {
     return (
       <Scene>
+        <a-sky color="#6EBAA7"></a-sky>
         {this.renderAssets()}
         {this.renderController()}
         {this.renderRoom()}
