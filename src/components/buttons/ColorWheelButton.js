@@ -24,9 +24,7 @@ class ColorWheelButton extends React.Component {
   }
 
   getY(x) {
-    const c = 0.5;
-
-    return -((x - 1.25) * (x + 1.25)) + c;
+    return -((x - 1) * (x + 1));
   }
 
   onColorChange(color) {
@@ -45,16 +43,16 @@ class ColorWheelButton extends React.Component {
           key={`${color}-${index}`}
           geometry={{
             primitive: 'cylinder',
-            radius: 0.25,
+            radius: 0.1,
             height: 0.01,
           }}
           material={{color}}
-          position={{x: 0, y: 0.75, z: -2}}
+          position={{x: 0, y: 0, z: 0}}
           animation={{
             property: 'position',
             dur: 2000,
             delay: index * 500,
-            to: `${x} ${y} -2`
+            to: `${x} ${y} 0`
           }}
           rotation="-90 0 0"
           events={{
@@ -71,11 +69,11 @@ class ColorWheelButton extends React.Component {
         <Entity
           geometry={{
             primitive: 'cylinder',
-            radius: 0.35,
+            radius: 0.15,
             height: 0.01,
           }}
           material={{color: 'black'}}
-          position={{x: 0, y: 0.75, z: -1.99}}
+          position={{x: 0, y: 0, z: 0.01}}
           rotation="-90 0 0"
         />
         {this.renderButtons()}
