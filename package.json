@@ -19,11 +19,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish": "npm run build && gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "node ./_scripts/publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Setsun/vr-showroom-daydream.git"
   },
   "author": "Sean Je Luo <seanjeluo@gmail.com>",
   "license": "MIT",
-  "homepage": "http://setsun.github.io/vr-showroom",
+  "homepage": "https://setsun.github.io/vr-showroom-daydream",
   "devDependencies": {
     "gh-pages": "^0.12.0"
   }
