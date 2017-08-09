@@ -14,7 +14,7 @@ class CartCarousel extends React.Component {
   render() {
     return (
       <Entity position="0 0 0" rotation="-90 0 0">
-        <a-ring color="teal" radius-inner="2.5" radius-outer="4" />
+        <a-ring color="gray" radius-inner="2.5" radius-outer="4" />
         <a-entity layout="type: circle; margin: 6; radius: 3.25">
           <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
           <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
