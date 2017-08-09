@@ -12,14 +12,36 @@ class ProductTile extends React.Component {
     product: PropTypes.object,
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      buttonActive: false,
+    }
+  }
+
+  toggleTileActive() {
+    this.setState({
+      buttonActive: !this.state.buttonActive
+    });
+  }
+
   render() {
     return (
       <Entity>
-        <ColorWheelButton colors={[
-          '#4CC3D9',
-          '#EF2D5E',
-          '#FFC65D',
-        ]}/>
+        <Entity>
+          <ColorWheelButton colors={[
+            '#4CC3D9',
+            '#EF2D5E',
+            '#FFC65D',
+          ]}/>
+        </Entity>
+        <a-entity
+          obj-model="obj: #tree-obj; mtl: #tree-mtl"
+          scale="0.5 0.5 0.5"
+          events={{
+            click: this.toggleTileActive,
+          }}
+        />
       </Entity>
     );
   }
