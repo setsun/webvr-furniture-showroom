@@ -1,0 +1,30 @@
+{
+  "name": "vr-showroom-daydream",
+  "version": "3.0.1",
+  "description": "VR Showroom using Daydream",
+  "dependencies": {
+    "aframe": "^0.6.0",
+    "aframe-animation-component": "^3.2.5",
+    "aframe-particle-system-component": "^1.0.8",
+    "aframe-react": "^4.3.0",
+    "babel-polyfill": "^6.3.14",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "publish": "npm run build && gh-pages -d build"
+  },
+  "author": "Sean Je Luo <seanjeluo@gmail.com>",
+  "license": "MIT",
+  "homepage": "http://setsun.github.io/vr-showroom",
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  }
+}
