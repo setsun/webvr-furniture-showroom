@@ -20,7 +20,7 @@ class ProductTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      infoOpen: false,
+      infoOpen: true,
     }
   }
 

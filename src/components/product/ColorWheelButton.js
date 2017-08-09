@@ -44,12 +44,6 @@ class ColorWheelButton extends React.Component {
       return (
         <Entity
           key={`${color}-${index}`}
-          geometry={{
-            primitive: 'cylinder',
-            radius: 0.2,
-            height: 0.01,
-          }}
-          material={{color}}
           position={{x: 0, y: 0, z: 0}}
           animation={{
             property: 'position',
@@ -57,11 +51,34 @@ class ColorWheelButton extends React.Component {
             delay: index * 500,
             to: `${x} ${y} 0`
           }}
-          rotation="-90 0 0"
-          events={{
-            click: () => this.onColorChange(color),
-          }}
-        />
+          rotation="-90 0 0">
+          <a-cylinder
+            height="0.01"
+            material="side: double; transparent:true; opacity: 0.5;"
+            open-ended="true"
+            color="white"
+            radius="0.15"
+          />
+          <a-cylinder
+            height="0.01"
+            material="side: double;"
+            open-ended="true"
+            color="white"
+            radius="0.125"
+            width="0.125"
+          />
+          <Entity
+            geometry={{
+              primitive: 'cylinder',
+              radius: 0.075,
+              height: 0.01,
+            }}
+            material={{color}}
+            events={{
+              click: () => this.onColorChange(color),
+            }}
+          />
+        </Entity>
       )
     });
   }
@@ -72,10 +89,10 @@ class ColorWheelButton extends React.Component {
         <Entity
           geometry={{
             primitive: 'cylinder',
-            radius: 0.3,
+            radius: 0.1,
             height: 0.01,
           }}
-          material={{color: 'black'}}
+          material={{color: '#A2A2A2'}}
           position={{x: 0, y: 0, z: 0.01}}
           rotation="-90 0 0"
         />
