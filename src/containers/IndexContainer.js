@@ -15,12 +15,16 @@ class IndexContainer extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+
+  }
+
   render () {
     return (
       <Scene>
         <a-assets>
-          <a-asset-item id="tree-obj" src="/assets/table_1/table_1.obj"></a-asset-item>
-          <a-asset-item id="tree-mtl" src="/assets/table_1/table_1.mtl"></a-asset-item>
+          <a-asset-item id="tree-obj" src="/assets/table_1/Jet_table.obj"></a-asset-item>
+          <a-asset-item id="tree-mtl" src="/assets/table_1/Jet_table.mtl"></a-asset-item>
         </a-assets>
         <Entity daydream-controls="hand: right" />
         <ProductTile />
@@ -31,8 +35,8 @@ class IndexContainer extends React.Component {
   }
 }
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state) => {
+  return state;
 };
 
 const mapDispatchToProps = () => {

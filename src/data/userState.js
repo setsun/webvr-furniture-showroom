@@ -1,14 +1,26 @@
+/*
+price = {
+  value: 12.35,
+  textureId: 'wood'
+}
+texture = {
+  id: 'wood',
+  path: '/assets/table_1/Jet_table.mtl'
+}
+currentTextureId = 'wood';
+*/
+
 const initialState = {
   products:[
     {name:'table', current:'wood', textures:['wood','steel','fabric'], prices: [{texture:'wood', price: 12.34}, {texture:'steel', price: 12.34}, {texture:'fabric', price: 12.34}]},
     {base:'chair', current:'wood', textures:['wood','steel','fabric'], prices: [{texture:'wood', price: 12.34}, {texture:'steel', price: 12.34}, {texture:'fabric', price: 12.34}]},
   ],
-  currentProductId:0,
+  currentProductId: 0,
   cart:[]
 };
 
 export const ActionTypes = {
-  TEXTURE_CHANGE: 'BUTTON_CLICKED',
+  TEXTURE_CHANGE: 'TEXTURE_CHANGE',
   ADD_TO_CART: 'ADD_TO_CART',
   ON_PRODUCT_CLICK: 'ON_PRODUCT_CLICK'
 };
@@ -19,7 +31,7 @@ export const onTextureChange = (payload) => ({
 });
 
 export const onProductClick = (id) => ({
-  type: ActionTypes.TEXTURE_CHANGE,
+  type: ActionTypes.ON_PRODUCT_CLICK,
   payload:id,
 });
 
