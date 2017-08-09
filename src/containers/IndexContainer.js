@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
-import {onButtonClicked} from '../data/userState';
+import {onTextureChange} from '../data/userState';
 
 class IndexContainer extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class IndexContainer extends React.Component {
     this.renderButtons = this.renderButtons.bind(this);
     this.getX = this.getX.bind(this);
     this.getY = this.getY.bind(this);
-    this.onButtonClick = this.onButtonClick.bind(this);
+    // this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   getX(currentPartition, min, max) {
@@ -37,11 +37,7 @@ class IndexContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.onButtonClicked('poop');
-  }
-
-  onButtonClick() {
-    console.log('clicked');
+    this.props.onButtonClick('poop');
   }
 
   renderButtons() {
@@ -69,7 +65,7 @@ class IndexContainer extends React.Component {
           }}
           rotation="-90 0 0"
           events={{
-            click: this.onButtonClick,
+            click: (index)=> this.props.onButtonClick({index}),
           }}
         />
       )
@@ -114,7 +110,7 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = () => {
   return {
-    onButtonClicked
+    onButtonClick: onTextureChange
   };
 };
 
