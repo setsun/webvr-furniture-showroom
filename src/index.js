@@ -6,7 +6,6 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
 import {createStore} from 'redux'
 
 import rootReducer from './data/rootReducer';
@@ -22,11 +21,9 @@ class App extends React.Component {
 
   render () {
     return (
-      <BrowserRouter>
-        <Provider store={store}>
-          <IndexContainer />
-        </Provider>
-      </BrowserRouter>
+      <Provider store={store}>
+        <IndexContainer />
+      </Provider>
     );
   }
 }
