@@ -14,7 +14,6 @@ class IndexContainer extends React.Component {
         '#4CC3D9',
         '#EF2D5E',
         '#FFC65D',
-
       ]
     }
 
