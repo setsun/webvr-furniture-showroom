@@ -7,12 +7,15 @@
     "aframe-animation-component": "^3.2.5",
     "aframe-particle-system-component": "^1.0.8",
     "aframe-react": "^4.3.0",
+    "aframe-svgfile-component": "^1.1.2",
     "babel-polyfill": "^6.3.14",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
