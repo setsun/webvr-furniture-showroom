@@ -11,7 +11,7 @@ import {createStore} from 'redux'
 
 import rootReducer from './data/rootReducer';
 
-import AppContainer from './containers/AppContainer';
+import IndexContainer from './containers/IndexContainer';
 
 const store = createStore(rootReducer, {});
 
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <AppContainer />
+          <IndexContainer />
         </Provider>
       </BrowserRouter>
     );

@@ -80,12 +80,12 @@ class IndexContainer extends React.Component {
     return (
       <Scene>
         <a-assets>
-          <a-asset-item id="tree-obj" src="/assets/table_1.obj"></a-asset-item>
-          <a-asset-item id="tree-mtl" src="/assets/table_1.mtl"></a-asset-item>
+          <a-asset-item id="tree-obj" src="/assets/table_1/table_1.obj"></a-asset-item>
+          <a-asset-item id="tree-mtl" src="/assets/table_1/table_1.mtl"></a-asset-item>
         </a-assets>
         <Entity daydream-controls="hand: right" />
         {this.renderButtons()}
-        <Entity
+        <a-entity
           obj-model="obj: #tree-obj; mtl: #tree-mtl"
           position="0 0 -3"
         />
