@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 import {Entity, Scene} from 'aframe-react';
 
 import {onTextureChange} from '../data/userState';
+import ColorWheelButton from '../components/buttons/ColorWheelButton';
+import CartCarousel from '../components/carousels/CartCarousel';
+import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 
 class IndexContainer extends React.Component {
   constructor(props) {
@@ -16,60 +19,6 @@ class IndexContainer extends React.Component {
         '#FFC65D',
       ]
     }
-
-    this.renderButtons = this.renderButtons.bind(this);
-    this.getX = this.getX.bind(this);
-    this.getY = this.getY.bind(this);
-    // this.onButtonClick = this.onButtonClick.bind(this);
-  }
-
-  getX(currentPartition, min, max) {
-    const partitions = this.state.colors.length - 1;
-    const diff = max - min;
-
-    return ((currentPartition / partitions) * diff) + min;
-  }
-
-  getY(x) {
-    const c = 0.5;
-
-    return -((x - 1.25) * (x + 1.25)) + c;
-  }
-
-  componentDidMount() {
-    this.props.onButtonClick('poop');
-  }
-
-  renderButtons() {
-    const {colors} = this.state;
-
-    return colors.map((color, index) => {
-      const x = this.getX(index, -1, 1);
-      const y = this.getY(x);
-
-      return (
-        <Entity
-          key={`${color}-${index}`}
-          geometry={{
-            primitive: 'cylinder',
-            radius: 0.25,
-            height: 0.01,
-          }}
-          material={{color}}
-          position={{x: 0, y: 0.5, z: -2}}
-          animation={{
-            property: 'position',
-            dur: 2000,
-            delay: index * 500,
-            to: `${x} ${y} -2`
-          }}
-          rotation="-90 0 0"
-          events={{
-            click: (index)=> this.props.onButtonClick({index}),
-          }}
-        />
-      )
-    });
   }
 
   render () {
@@ -80,25 +29,12 @@ class IndexContainer extends React.Component {
           <a-asset-item id="tree-mtl" src="/assets/table_1/table_1.mtl"></a-asset-item>
         </a-assets>
         <Entity daydream-controls="hand: right" />
-        {this.renderButtons()}
-        <a-entity
-          obj-model="obj: #tree-obj; mtl: #tree-mtl"
-          position="0 0 -3"
+        <ColorWheelButton
+          colors={this.state.colors}
+          onColorChange= {(color)=>this.props.onButtonClick(color)}
         />
-        <Entity
-          geometry={{
-            primitive: 'plane',
-            width: 8,
-            height: 8
-          }}
-          material={{color: '#999999'}}
-          position="0 0 -4"
-          rotation={{x: -90, y: 0, z: 0}}
-        />
-        <Entity
-          geometry={{primitive: 'plane'}}
-          material={{color: '#ECECEC'}}
-        />
+        <CartCarousel />
+        <CategoriesCarousel />
       </Scene>
     );
   }
