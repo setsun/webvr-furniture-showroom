@@ -13,6 +13,7 @@ class CartCarousel extends React.Component {
     super(props);
 
     this.state = {
+      willExit: false,
       rotationDegrees: 0
     }
   }
@@ -41,6 +42,20 @@ class CartCarousel extends React.Component {
         to={`0 0 ${rotationDegrees}`}
       />
     );
+  }
+
+  exitAnimation() {
+    if (!this.state.willExit) {
+      return null;
+    }
+
+    return `
+      property: scale;
+      dur: 1500;
+      elasticity: 300;
+      easing: easeInOutElastic;
+      to: 0 0 0
+    `;
   }
 
   renderRing() {
@@ -99,7 +114,8 @@ class CartCarousel extends React.Component {
           property: scale;
           dur: 2000;
           to: 1 1 1
-        `}>
+        `}
+        animation__exit={this.exitAnimation()}>
         <a-entity>
           {this.rotateAnimation()}
           {this.renderRing()}

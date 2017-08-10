@@ -13,6 +13,7 @@ class CategoriesCarousel extends React.Component {
     super(props);
 
     this.state = {
+      willExit: false,
       rotationDegrees: 0
     }
   }
@@ -42,6 +43,19 @@ class CategoriesCarousel extends React.Component {
       />
     );
   }
+
+  exitAnimation() {
+    if (!this.state.willExit) {
+      return null;
+    }
+
+    return `
+      property: position;
+      dur: 1500;
+      to: 0 0 0
+    `;
+  }
+
 
   renderRing() {
     return (
@@ -97,7 +111,8 @@ class CategoriesCarousel extends React.Component {
       <a-entity
         position="0 2.5 0"
         rotation="-90 0 0"
-        animation="property: position; dur: 1500; to: 0 1.5 0">
+        animation="property: position; dur: 1500; to: 0 1.5 0"
+        animation__exit={this.exitAnimation()}>
         <a-entity>
           {this.rotateAnimation()}
           {this.renderRing()}
