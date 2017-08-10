@@ -25,12 +25,21 @@ class ProductTile extends React.Component {
     super(props);
     this.state = {
       infoOpen: false,
+      modelId: null,
+      textureId: null
     }
   }
 
   toggleInfoOpen() {
     this.setState({
       infoOpen: !this.state.infoOpen
+    });
+  }
+
+  handleModelChange(modelId, textureId) {
+    this.setState({
+      modelId,
+      textureId
     });
   }
 
@@ -75,11 +84,14 @@ class ProductTile extends React.Component {
       );
     }
 
+    console.log(this.state.modelId, this.state.textureId);
+
     return (
       <a-entity
+        key={`${this.state.modelId}-${this.state.textureId}-${modelId}`}
         obj-model={`
-          obj: ${modelId};
-          mtl: ${textureId};
+          obj: ${this.state.modelId || modelId};
+          mtl: ${this.state.textureId || textureId};
         `}
         scale="0.5 0.5 0.5"
       />
@@ -108,7 +120,7 @@ class ProductTile extends React.Component {
               <ProductInfoBubble
                 product={product}
                 onAddToCart={onAddToCart}
-                onVariantChange={onVariantChange}
+                onVariantChange={onVariantChange ? (modelId, textureId) => this.handleModelChange(modelId, textureId) : null}
                 onCategorySelect={onCategorySelect}
               />
             )}

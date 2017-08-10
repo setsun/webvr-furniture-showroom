@@ -23,8 +23,8 @@ class ColorPaletteButton extends React.Component {
     return {x, y};
   }
 
-  onColorChange(color) {
-    console.log(color);
+  handleColorChange(modelId, textureId) {
+    this.props.onColorChange(modelId, textureId);
     this.setState({open: false});
   }
 
@@ -79,7 +79,7 @@ class ColorPaletteButton extends React.Component {
             easing: easeInOutElastic;
             to: ${x} ${y} 0
           `}
-          onClick={() => this.onColorChange(color)}>
+          onClick={() => this.handleColorChange(modelId, textureId)}>
           <a-ring
             material="transparent:true; opacity: 0.5;"
             color="white"
