@@ -43,13 +43,6 @@ class ProductTile extends React.Component {
         <Entity position="0 0.5 0">
           {infoOpen && <ProductInfoBubble />}
         </Entity>
-        <a-entity
-          obj-model="obj: #tree-obj; mtl: #tree-mtl"
-          scale="0.5 0.5 0.5"
-          events={{
-            click: this.toggleInfoOpen,
-          }}
-        />
       </Entity>
     );
   }

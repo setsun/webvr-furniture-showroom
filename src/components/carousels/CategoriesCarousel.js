@@ -49,7 +49,8 @@ class CategoriesCarousel extends React.Component {
           property: 'position',
           dur: 1500,
           to: '0 1.5 0'
-        }}>
+        }}
+        >
         {this.renderRing()}
         {this.renderProducts()}
       </Entity>
