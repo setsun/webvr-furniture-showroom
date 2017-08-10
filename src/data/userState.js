@@ -7,7 +7,7 @@ const initialState = {
   categories: catagoryList,
   currentProduct: 0,
   currentCategory: "",
-  cartCarouselOpen: true,
+  cartCarouselOpen: false,
   categoriesCarouselOpen: false,
   cart:[]
 };
@@ -45,15 +45,13 @@ export default (state = initialState, action) => {
 
   switch (action.type) {
     case ActionTypes.TEXTURE_CHANGE: {
-      //what texture was clicked
-      //change the state of object
       return {...state};
     }
     case ActionTypes.ON_CATEGORY_CLICK:{
       return {...state, currentCategory:action.payload, categoriesCarouselOpen:false};
     }
     case ActionTypes.ADD_TO_CART:{
-      return {...state, cart: state.cart.concat(action.payload)}
+      return {...state, cartCarouselOpen: true, cart: state.cart.concat(action.payload)}
     }
     case ActionTypes.ON_PRODUCT_CLICK:{
       return {...state, categoriesCarouselOpen: action.payload};
