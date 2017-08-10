@@ -100,7 +100,6 @@ class IndexContainer extends React.Component {
         <a-asset-item id="drawer-obj" src="assets/models/drawer/drawer.obj"></a-asset-item>
         <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
 
-
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
         <a-asset-item id="table-2" src="assets/models/table_2/attach-demo-table.gltf"></a-asset-item>
@@ -147,8 +146,15 @@ class IndexContainer extends React.Component {
 
     return (
       <a-entity
-        position="0 0 -6"
+        position="0 0 -7.5"
         scale="2 2 2">
+        <a-plane
+          rotation="-90 0 0"
+          color="#2b3d47"
+          material="transparent: true; opacity: 0.75"
+          height="3"
+          width="5.5"
+        />
         <a-entity
           position="-2 0 0">
           <ProductTile
