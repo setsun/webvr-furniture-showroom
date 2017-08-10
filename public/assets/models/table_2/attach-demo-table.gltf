@@ -5,55 +5,27 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 36,
+      "count": 1956,
       "type": "SCALAR",
       "min": [
         0
       ],
       "max": [
-        23
+        1293
       ]
     },
     "accessor_index_1": {
       "bufferView": "bufferView_1",
-      "byteOffset": 72,
+      "byteOffset": 3912,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 1116,
+      "count": 132,
       "type": "SCALAR",
       "min": [
-        24
+        996
       ],
       "max": [
-        863
-      ]
-    },
-    "accessor_index_2": {
-      "bufferView": "bufferView_1",
-      "byteOffset": 2304,
-      "byteStride": 0,
-      "componentType": 5123,
-      "count": 108,
-      "type": "SCALAR",
-      "min": [
-        48
-      ],
-      "max": [
-        527
-      ]
-    },
-    "accessor_index_3": {
-      "bufferView": "bufferView_1",
-      "byteOffset": 2520,
-      "byteStride": 0,
-      "componentType": 5123,
-      "count": 36,
-      "type": "SCALAR",
-      "min": [
-        744
-      ],
-      "max": [
-        767
+        1091
       ]
     },
     "accessor_position": {
@@ -61,25 +33,25 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5126,
-      "count": 864,
+      "count": 1192,
       "min": [
-        -0.938730001449585,
-        0.014220000244677067,
-        -0.4669249951839447
+        -1.2355149984359741,
+        0.0031689999159425497,
+        -1.280771017074585
       ],
       "max": [
-        1.0465199947357178,
-        1.0862549543380737,
-        0.4595249891281128
+        1.3291629552841187,
+        1.8609869480133057,
+        1.2839089632034302
       ],
       "type": "VEC3"
     },
     "accessor_normal": {
       "bufferView": "bufferView_0",
-      "byteOffset": 10368,
+      "byteOffset": 14304,
       "byteStride": 0,
       "componentType": 5126,
-      "count": 864,
+      "count": 1192,
       "type": "VEC3",
       "min": [
         -1,
@@ -105,28 +77,28 @@
   "buffers": {
     "buffer_0": {
       "type": "arraybuffer",
-      "byteLength": 23328,
+      "byteLength": 32784,
       "uri": "buffer_0.bin"
     }
   },
   "bufferViews": {
     "bufferView_0": {
       "buffer": "buffer_0",
-      "byteLength": 20736,
+      "byteLength": 28608,
       "byteOffset": 0,
       "target": 34962
     },
     "bufferView_1": {
       "buffer": "buffer_0",
-      "byteLength": 2592,
-      "byteOffset": 20736,
+      "byteLength": 4176,
+      "byteOffset": 28608,
       "target": 34963
     }
   },
   "images": {},
   "materials": {
-    "material_353535": {
-      "name": "353535",
+    "material_MeshMaterial": {
+      "name": "MeshMaterial",
       "extensions": {},
       "values": {
         "ambient": [
@@ -136,9 +108,9 @@
           1
         ],
         "diffuse": [
-          0.207843,
-          0.207843,
-          0.207843,
+          0.388235,
+          0.14902,
+          0.015686,
           1
         ],
         "emission": [
@@ -158,74 +130,8 @@
       },
       "technique": "technique0"
     },
-    "material_b0b0b0": {
-      "name": "b0b0b0",
-      "extensions": {},
-      "values": {
-        "ambient": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "diffuse": [
-          0.690196,
-          0.690196,
-          0.690196,
-          1
-        ],
-        "emission": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "specular": [
-          0.001176,
-          0.001176,
-          0.001176,
-          1
-        ],
-        "shininess": 96.078431,
-        "transparency": 1
-      },
-      "technique": "technique0"
-    },
-    "material_baa995": {
-      "name": "baa995",
-      "extensions": {},
-      "values": {
-        "ambient": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "diffuse": [
-          0.73,
-          0.663724,
-          0.585921,
-          1
-        ],
-        "emission": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "specular": [
-          0.001176,
-          0.001176,
-          0.001176,
-          1
-        ],
-        "shininess": 96.078431,
-        "transparency": 1
-      },
-      "technique": "technique0"
-    },
-    "material_ffffff": {
-      "name": "ffffff",
+    "material_TableMaterial": {
+      "name": "TableMaterial",
       "extensions": {},
       "values": {
         "ambient": [
@@ -259,8 +165,8 @@
     }
   },
   "meshes": {
-    "mesh_table": {
-      "name": "table",
+    "mesh_attach-demo-table": {
+      "name": "attach-demo-table",
       "primitives": [
         {
           "attributes": {
@@ -268,7 +174,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_0",
-          "material": "material_353535",
+          "material": "material_MeshMaterial",
           "mode": 4
         },
         {
@@ -277,25 +183,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_1",
-          "material": "material_b0b0b0",
-          "mode": 4
-        },
-        {
-          "attributes": {
-            "POSITION": "accessor_position",
-            "NORMAL": "accessor_normal"
-          },
-          "indices": "accessor_index_2",
-          "material": "material_ffffff",
-          "mode": 4
-        },
-        {
-          "attributes": {
-            "POSITION": "accessor_position",
-            "NORMAL": "accessor_normal"
-          },
-          "indices": "accessor_index_3",
-          "material": "material_baa995",
+          "material": "material_TableMaterial",
           "mode": 4
         }
       ]
@@ -305,7 +193,7 @@
     "rootNode": {
       "children": [],
       "meshes": [
-        "mesh_table"
+        "mesh_attach-demo-table"
       ],
       "matrix": [
         1,
@@ -328,9 +216,9 @@
     }
   },
   "samplers": {},
-  "scene": "scene_table",
+  "scene": "scene_attach-demo-table",
   "scenes": {
-    "scene_table": {
+    "scene_attach-demo-table": {
       "nodes": [
         "rootNode"
       ]

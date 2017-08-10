@@ -102,7 +102,6 @@ class CartCarousel extends React.Component {
         <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#sofa" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#table-2" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#office-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#yellow-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
       </a-entity>
