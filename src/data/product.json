@@ -1,0 +1,22 @@
+[
+    {
+        "name":"table", 
+        "currentTextureId":"wood", 
+        "textures":["wood","steel","fabric"], 
+        "prices": [
+            {"texture":"wood", "price": 12.34}, 
+            {"texture":"steel", "price": 12.34}, 
+            {"texture":"fabric", "price": 12.34}
+        ]
+    },
+    {
+        "name":"chair", 
+        "currentTextureId":"wood", 
+        "textures":["wood","steel","fabric"], 
+        "prices": [
+            {"texture":"wood", "price": 12.34}, 
+            {"texture":"steel", "price": 12.34}, 
+            {"texture":"fabric", "price": 12.34}
+        ]
+    }
+]
