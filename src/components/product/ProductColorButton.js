@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Entity} from 'aframe-react';
 
-class ColorWheelButton extends React.Component {
+class ProductColorButton extends React.Component {
   static propTypes = {
     colors: PropTypes.array.isRequired,
     currentColor: PropTypes.string,
@@ -19,15 +19,11 @@ class ColorWheelButton extends React.Component {
     }
   }
 
-  getX(currentPartition, min, max) {
-    const partitions = this.props.colors.length - 1;
-    const diff = max - min;
+  getPosition(x0, y0, radius, theta) {
+    const x = x0 + (radius * Math.cos(theta));
+    const y = y0 + (radius * Math.sin(theta));
 
-    return ((currentPartition / partitions) * diff) + min;
-  }
-
-  getY(x) {
-    return -((x - 1) * (x + 1));
+    return {x, y};
   }
 
   onColorChange(color) {
@@ -36,10 +32,10 @@ class ColorWheelButton extends React.Component {
 
   renderButtons() {
     const {colors} = this.props;
+    const slice = (2 * Math.PI) / (colors.length - 1);
 
     return colors.map((color, index) => {
-      const x = this.getX(index, -1, 1);
-      const y = this.getY(x);
+      const {x, y} = this.getPosition(0, 0, 0.3, slice * index);
 
       return (
         <Entity
@@ -47,8 +43,8 @@ class ColorWheelButton extends React.Component {
           position={{x: 0, y: 0, z: 0}}
           animation={{
             property: 'position',
-            dur: 2000,
-            delay: index * 500,
+            dur: 750,
+            delay: index * 50,
             to: `${x} ${y} 0`
           }}
           rotation="-90 0 0">
@@ -102,4 +98,4 @@ class ColorWheelButton extends React.Component {
   }
 }
 
-export default ColorWheelButton;
+export default ProductColorButton;

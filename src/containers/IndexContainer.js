@@ -14,8 +14,8 @@ class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartCarouselOpen: true,
-      categoriesCarouselOpen: true,
+      cartCarouselOpen: false,
+      categoriesCarouselOpen: false,
     }
   }
 

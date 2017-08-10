@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Entity} from 'aframe-react';
 
-import ColorWheelButton from './ColorWheelButton';
+import ProductColorButton from './ProductColorButton';
 
 class ProductInfoBubble extends React.Component {
   static propTypes = {
@@ -14,7 +14,7 @@ class ProductInfoBubble extends React.Component {
   render() {
     return (
       <Entity>
-        <ColorWheelButton
+        <ProductColorButton
           colors={[
             '#4CC3D9',
             '#EF2D5E',
