@@ -92,19 +92,18 @@ class CartCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #jet-table-glassy-obj; mtl: #jet-table-glassy-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#sofa" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#table-2" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#office-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-gltf-model src="#yellow-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
       </a-entity>
     );
   }

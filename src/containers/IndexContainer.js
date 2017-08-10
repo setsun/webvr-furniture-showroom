@@ -15,7 +15,7 @@ const tempData = {
     table1: {
       name: 'Normal Table',
       price: 23.56,
-      modelId: '#jet-table-glassy-obj',
+      modelId: '#jet-table-glassdy-obj',
       textureId: '#jet-table-glassy-mtl',
       colors: [
         '#4CC3D9',
@@ -29,7 +29,7 @@ const tempData = {
     table2: {
       name: 'Fancy Table',
       price: 123.54,
-      modelId: '#jet-table-purple-obj',
+      modelId: '#jet-table-purdple-obj',
       textureId: '#jet-table-purple-mtl',
       colors: [
         '#4CC3D9',
@@ -69,7 +69,6 @@ class IndexContainer extends React.Component {
 
   componentDidMount() {
     // Test redux actions here
-    this.props.onTextureChange();
     console.log(this.state)
     console.log(this.props.userState);
   }
@@ -100,10 +99,10 @@ class IndexContainer extends React.Component {
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
-        <a-asset-item id="table-2" src="assets/models/table_2/table.gltf"></a-asset-item>
+        <a-asset-item id="table-2" src="assets/models/table_2/attach-demo-table.gltf"></a-asset-item>
 
         <a-asset-item id="office-chair" src="assets/models/office_chair/office-chair.gltf"></a-asset-item>
-        <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/yellow-chair.gltf"></a-asset-item>
+        <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/chair.gltf"></a-asset-item>
       </a-assets>
     );
   }
@@ -137,20 +136,35 @@ class IndexContainer extends React.Component {
   }
 
   renderRoom() {
+    const {
+      onCategoryClick,
+      onTextureChange,
+      addToCart
+    } = this.props;
+
     return (
       <a-entity
         position="0 0 -6"
         scale="2 2 2">
         <ProductTile
           position="-1 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.table1.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.table1}
         />
         <ProductTile
           position="0 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.table2.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.table2}
         />
         <ProductTile
           position="1 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.drawer.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.drawer}
         />
       </a-entity>

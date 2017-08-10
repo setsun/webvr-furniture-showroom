@@ -10,6 +10,9 @@ import ColorPaletteButton from './ColorPaletteButton';
 class ProductInfoBubble extends React.Component {
   static propTypes = {
     product: PropTypes.object,
+    onAddToCart: PropTypes.func,
+    onVariantChange: PropTypes.func,
+    onCategorySelect: PropTypes.func,
   }
 
   renderBubble() {
@@ -38,14 +41,19 @@ class ProductInfoBubble extends React.Component {
     } = this.props;
 
     return (
-      <a-entity>
+      <a-entity position="-0.15 0.75 0">
+        <a-text position="0 0 0" value="Fancy Table" color="#000000"/>
+        <a-text position="0 -0.35 0" value="$12.56" color="#8200FF"/>
       </a-entity>
     );
   }
 
   render() {
     const {
-      product
+      product,
+      onAddToCart,
+      onVariantChange,
+      onCategorySelect,
     } = this.props;
 
     return (
@@ -54,12 +62,12 @@ class ProductInfoBubble extends React.Component {
         {this.renderDescription()}
         <a-entity position="-0.25 -0.25 0.01">
           <AddToCartButton
-            onAddToCart={() => console.log('ATC clicked!')}
+            onAddToCart={() => onAddToCart()}
           />
         </a-entity>
         <a-entity position="0.75 0 0.02">
           <ExpandDescriptionButton
-            onExpandDescription={() => console.log('ED clicked!')}
+            onExpandDescription={() => onCategorySelect()}
           />
         </a-entity>
         <a-entity position="1 0 0.03">
