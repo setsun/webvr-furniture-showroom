@@ -61,6 +61,31 @@ class ProductTile extends React.Component {
     )
   }
 
+  renderModel() {
+    const {
+      product: {
+        modelId,
+        textureId
+      }
+    } = this.props;
+
+    if (!textureId) {
+      return (
+        <a-gltf-model src={modelId} scale="0.5 0.5 0.5"></a-gltf-model>
+      );
+    }
+
+    return (
+      <a-entity
+        obj-model={`
+          obj: ${modelId};
+          mtl: ${textureId};
+        `}
+        scale="0.5 0.5 0.5"
+      />
+    );
+  }
+
   render() {
     const {
       position,
@@ -89,13 +114,7 @@ class ProductTile extends React.Component {
             )}
           </a-entity>
         </a-entity>
-        <a-entity
-          obj-model={`
-            obj: ${product.modelId};
-            mtl: ${product.textureId};
-          `}
-          scale="0.5 0.5 0.5"
-        />
+        {this.renderModel()}
       </a-entity>
     );
   }

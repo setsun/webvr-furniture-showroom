@@ -15,8 +15,8 @@ const tempData = {
     table1: {
       name: 'Normal Table',
       price: 23.56,
-      modelId: '#jet-table-glassdy-obj',
-      textureId: '#jet-table-glassy-mtl',
+      modelId: '#wooden-table',
+      textureId: null,
       colors: [
         '#4CC3D9',
         '#EF2D5E',
@@ -29,8 +29,8 @@ const tempData = {
     table2: {
       name: 'Fancy Table',
       price: 123.54,
-      modelId: '#jet-table-purdple-obj',
-      textureId: '#jet-table-purple-mtl',
+      modelId: '#sofa',
+      textureId: null,
       colors: [
         '#4CC3D9',
         '#EF2D5E',
@@ -88,19 +88,9 @@ class IndexContainer extends React.Component {
         <a-asset-item id="drawer-obj" src="assets/models/drawer/drawer.obj"></a-asset-item>
         <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
 
-        <a-asset-item id="jet-table-glassy-obj" src="assets/models/jet_table/jet_table_glassy.obj"></a-asset-item>
-        <a-asset-item id="jet-table-glassy-mtl" src="assets/models/jet_table/jet_table_glassy.mtl"></a-asset-item>
-        <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_light_brown.obj"></a-asset-item>
-        <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_light_brown.mtl"></a-asset-item>
-        <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
-        <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
-        <a-asset-item id="jet-table-wood-obj" src="assets/models/jet_table/jet_table_wood.obj"></a-asset-item>
-        <a-asset-item id="jet-table-wood-mtl" src="assets/models/jet_table/jet_table_wood.mtl"></a-asset-item>
-
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
         <a-asset-item id="table-2" src="assets/models/table_2/attach-demo-table.gltf"></a-asset-item>
-
         <a-asset-item id="office-chair" src="assets/models/office_chair/office-chair.gltf"></a-asset-item>
         <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/chair.gltf"></a-asset-item>
       </a-assets>
@@ -139,7 +129,7 @@ class IndexContainer extends React.Component {
     const {
       onCategoryClick,
       onTextureChange,
-      addToCart
+      onAddToCart
     } = this.props;
 
     return (
@@ -215,6 +205,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    onAddToCart: (productId) => dispatch(addToCart(productId)),
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
     onProductClicked: (productId) => dispatch(onProductClick(productId)),
     onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId)),
