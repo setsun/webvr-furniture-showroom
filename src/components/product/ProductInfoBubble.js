@@ -12,6 +12,29 @@ class ProductInfoBubble extends React.Component {
     product: PropTypes.object,
   }
 
+  renderBubble() {
+    return (
+      <a-entity position="0.5 0.5 0">
+        <a-circle
+          material="transparent: true; opacity: 0.5"
+          position="0.5 0 0"
+          radius="0.5"
+        />
+        <a-plane
+          material="transparent: true; opacity: 0.5"
+          position="0 0 0"
+          height="1"
+          width="1"
+        />
+        <a-circle
+          material="transparent: true; opacity: 0.5"
+          position="-0.5 0 0"
+          radius="0.5"
+        />
+      </a-entity>
+    )
+  }
+
   render() {
     const {
       product
@@ -19,6 +42,7 @@ class ProductInfoBubble extends React.Component {
 
     return (
       <a-entity>
+        {this.renderBubble()}
         <a-entity position="0.5 0 0.01">
           <AddToCartButton
             onAddToCart={() => console.log('ATC clicked!')}
