@@ -71,16 +71,18 @@ class CartCarousel extends React.Component {
   renderButtons() {
     return (
       <a-entity position="0 2.25 0.25" rotation="75 0 0">
-        <a-circle
-          position="0.75 0 0"
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-left-circle"
+          position="-0.75 0 0"
+          height="0.2"
+          width="0.2"
           onClick={() => this.rotateLeft()}
         />
-        <a-circle
-          position="-0.75 0 0"
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-right-circle"
+          position="0.75 0 0"
+          height="0.2"
+          width="0.2"
           onClick={() => this.rotateRight()}
         />
       </a-entity>
@@ -90,16 +92,17 @@ class CartCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
       </a-entity>
     );
   }
