@@ -8,7 +8,7 @@ const initialState = {
   currentProduct: 0,
   currentCategory: "",
   cartCarouselOpen: false,
-  categoriesCarouselOpen: true,
+  categoriesCarouselOpen: false,
   cart:[]
 };
 
