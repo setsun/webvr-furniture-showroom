@@ -143,7 +143,8 @@ class IndexContainer extends React.Component {
 
     return (
       <a-entity
-        position="0 0 -7.5"
+        position="0 0 -8"
+        rotation="10 0 0"
         scale="2 2 2">
         <a-plane
           rotation="-90 0 0"
@@ -153,8 +154,17 @@ class IndexContainer extends React.Component {
           width="5.5"
         />
         <a-entity
-          position="-2 0 0">
+          position="-1.75 -0.0175 0">
           <ProductTile
+            waypointPosition="0.125 1.125 0.25"
+            onAddToCart={() => onAddToCart(tempData.productMap.table2)}
+            product={tempData.productMap.table2}
+          />
+        </a-entity>
+        <a-entity
+          position="0.25 0 0">
+          <ProductTile
+            waypointPosition="0.125 1 0.5"
             onVariantChange={onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.table1)}
             onCategorySelect={()=>onCategoryClick('Table')}
@@ -162,22 +172,10 @@ class IndexContainer extends React.Component {
           />
         </a-entity>
         <a-entity
-          position="0 0 0">
-          <ProductTile
-            waypointPosition="0.125 1.125 0.25"
-            onVariantChange={onTextureChange}
-            onAddToCart={() => onAddToCart(tempData.productMap.table2)}
-            onCategorySelect={ () => onCategoryClick('FancyTable')}
-            product={tempData.productMap.table2}
-          />
-        </a-entity>
-        <a-entity
           position="2 0 0">
           <ProductTile
             waypointPosition="0.125 0.75 0.5"
-            onVariantChange={(variant)=> onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.drawer)}
-            onCategorySelect={() => onCategoryClick('Chair')}
             product={tempData.productMap.drawer}
           />
         </a-entity>

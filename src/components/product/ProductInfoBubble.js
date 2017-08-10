@@ -66,14 +66,19 @@ class ProductInfoBubble extends React.Component {
           />
         </a-entity>
         <a-entity position="0.75 0 0.02">
-          <ExpandDescriptionButton
-            onExpandDescription={() => onCategorySelect()}
-          />
+          {onCategorySelect && (
+            <ExpandDescriptionButton
+              onExpandDescription={() => onCategorySelect()}
+            />
+          )}
         </a-entity>
         <a-entity position="1 0 0.03">
-          <ColorPaletteButton
-            colors={product.colors}
-          />
+          {onVariantChange && (
+            <ColorPaletteButton
+              colors={product.colors}
+              onVariantChange={() => onVariantChange()}
+            />
+          )}
         </a-entity>
       </a-entity>
     );
