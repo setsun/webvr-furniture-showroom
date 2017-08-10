@@ -59,6 +59,9 @@ class IndexContainer extends React.Component {
   render () {
     return (
       <Scene>
+        <a-camera>
+          <a-cursor></a-cursor>
+        </a-camera>
         <a-sky color="#6EBAA7"></a-sky>
         {this.renderAssets()}
         {this.renderController()}

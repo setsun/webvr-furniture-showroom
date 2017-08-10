@@ -28,6 +28,11 @@ class ProductColorButton extends React.Component {
 
   onColorChange(color) {
     console.log(color);
+    this.setState({open: false});
+  }
+
+  toggleOpen() {
+    this.setState({open: !this.state.open});
   }
 
   renderButtons() {
@@ -48,20 +53,18 @@ class ProductColorButton extends React.Component {
             to: `${x} ${y} 0`
           }}
           rotation="-90 0 0">
-          <a-cylinder
-            height="0.01"
-            material="side: double; transparent:true; opacity: 0.5;"
-            open-ended="true"
+          <a-ring
+            material="transparent:true; opacity: 0.5;"
             color="white"
-            radius="0.15"
+            radius-inner="0.1"
+            radius-outer="0.125"
+            rotation="90 0 0"
           />
-          <a-cylinder
-            height="0.01"
-            material="side: double;"
-            open-ended="true"
+          <a-ring
             color="white"
-            radius="0.125"
-            width="0.125"
+            radius-inner="0.075"
+            radius-outer="0.1"
+            rotation="90 0 0"
           />
           <Entity
             geometry={{
@@ -91,16 +94,23 @@ class ProductColorButton extends React.Component {
             height: 0.01,
           }}
           material={{color: '#37474F'}}
+          events={{
+            click: () => this.toggleOpen()
+          }}
         />
       </Entity>
     );
   }
 
   render() {
+    const {
+      open
+    } = this.state;
+
     return (
       <Entity>
         {this.renderBaseButton()}
-        {this.renderButtons()}
+        {open && this.renderButtons()}
       </Entity>
     );
   }

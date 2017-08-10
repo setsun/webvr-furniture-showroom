@@ -40,7 +40,7 @@ class ProductTile extends React.Component {
 
     return (
       <Entity position={position}>
-        <Entity position="0 0.5 0">
+        <Entity position="0 1 0">
           {infoOpen && <ProductInfoBubble />}
         </Entity>
       </Entity>
