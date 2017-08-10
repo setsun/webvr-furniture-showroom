@@ -9,6 +9,14 @@ class CategoriesCarousel extends React.Component {
     products: PropTypes.array,
   }
 
+  rotateLeft() {
+    this.setState({});
+  }
+
+  rotateRight() {
+    this.setState({});
+  }
+
   renderRing() {
     return (
       <a-cylinder
@@ -24,8 +32,19 @@ class CategoriesCarousel extends React.Component {
 
   renderButtons() {
     return (
-      <a-entity>
-
+      <a-entity position="0 2 -0.2" rotation="90 0 0">
+        <a-circle
+          position="0.75 0 0"
+          radius="0.1"
+          color="#37474F"
+          onClick={() => this.rotateLeft()}
+        />
+        <a-circle
+          position="-0.75 0 0"
+          radius="0.1"
+          color="#37474F"
+          onClick={() => this.rotateRight()}
+        />
       </a-entity>
     );
   }
@@ -33,16 +52,16 @@ class CategoriesCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
       </a-entity>
     );
   }

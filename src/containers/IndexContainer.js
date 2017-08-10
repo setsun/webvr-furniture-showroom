@@ -63,8 +63,8 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: false,
-      categoriesCarouselOpen: false,
+      cartCarouselOpen: true,
+      categoriesCarouselOpen: true,
       productDescriptionPageOpen: false,
     }
   }
@@ -77,6 +77,7 @@ class IndexContainer extends React.Component {
   provideAssets() {
     return (
       <a-assets timeout="0">
+        <img id="icon-jet-circle" src="assets/images/icon-jet-circle.png"></img>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
@@ -93,10 +94,34 @@ class IndexContainer extends React.Component {
         <a-cursor></a-cursor>
         <a-entity daydream-controls="hand: right"></a-entity>
       </a-camera>
-    )
+    );
+  }
+
+  renderLoadingScreen() {
+    return this.state.loadingScreenOpen && <LoadingScreen />;
+  }
+
+  renderLoadedScene() {
+    if (this.state.loadingScreenOpen) {
+      return null;
+    }
+
+    return (
+      <a-entity>
+        {this.renderLogo()}
+        {this.renderRoom()}
+        {this.renderCartCarousel()}
+        {this.renderCategoriesCarousel()}
+        {this.renderProductDescriptionPage()}
+      </a-entity>
+    );
   }
 
   renderRoom() {
+    if (true) {
+      return null;
+    }
+
     return (
       <a-entity position="0 0.75 -2">
         <ProductTile
@@ -115,21 +140,17 @@ class IndexContainer extends React.Component {
     );
   }
 
-  renderLoadingScreen() {
-    return this.state.loadingScreenOpen && <LoadingScreen />;
-  }
-
-  renderLoadedScene() {
-    if (this.state.loadingScreenOpen) {
-      return null;
-    }
-
+  renderLogo() {
     return (
-      <a-entity>
-        {this.renderRoom()}
-        {this.renderCartCarousel()}
-        {this.renderCategoriesCarousel()}
-        {this.renderProductDescriptionPage()}
+      <a-entity position="2 4 -6">
+        <a-image
+          src="#icon-jet-circle"
+        />
+        <a-entity
+          text="value: VR;"
+          scale="15 15 15"
+          position="8 0 0"
+        />
       </a-entity>
     );
   }
