@@ -92,18 +92,17 @@ class CategoriesCarousel extends React.Component {
   }
 
   renderProducts() {
-
-    console.log(this.props.products);
-      const products = this.props.products.map((product) => {
-      const model = "obj: "+product.currentVariant.modelId+"; mtl:"+ product.currentVariant.textureId;
-      console.log("model is ", model)
-      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25"/>
-    });
-
     return (
-      
       <a-entity layout="type: circle; margin: 6; radius: 3.25" >
-        {products}
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: jet-table-brown-obj; mtl: jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25"/>
       </a-entity>
 
     );

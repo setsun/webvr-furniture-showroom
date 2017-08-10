@@ -15,8 +15,8 @@ const tempData = {
     table1: {
       name: 'Normal Table',
       price: 23.56,
-      modelId: '#wooden-table',
-      textureId: null,
+      modelId: '#jet-table-brown-obj',
+      textureId: '#jet-table-brown-mtl',
       colors: [
         '#4CC3D9',
         '#EF2D5E',
@@ -87,13 +87,10 @@ class IndexContainer extends React.Component {
 
         <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_brown.obj"></a-asset-item>
         <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_brown.mtl"></a-asset-item>
-
         <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
         <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
-
         <a-asset-item id="jet-table-red-obj" src="assets/models/jet_table/jet_table_red.obj"></a-asset-item>
         <a-asset-item id="jet-table-red-mtl" src="assets/models/jet_table/jet_table_red.mtl"></a-asset-item>
-
         <a-asset-item id="jet-table-yellow-obj" src="assets/models/jet_table/jet_table_yellow.obj"></a-asset-item>
         <a-asset-item id="jet-table-yellow-mtl" src="assets/models/jet_table/jet_table_yellow.mtl"></a-asset-item>
 
@@ -160,13 +157,14 @@ class IndexContainer extends React.Component {
           <ProductTile
             onVariantChange={onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.table1)}
-            onCategorySelect={()=>onCategoryClick('Chair')}
+            onCategorySelect={()=>onCategoryClick('Table')}
             product={tempData.productMap.table1}
           />
         </a-entity>
         <a-entity
           position="0 0 0">
           <ProductTile
+            waypointPosition="0.125 1.125 0.25"
             onVariantChange={onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.table2)}
             onCategorySelect={ () => onCategoryClick('FancyTable')}
@@ -176,6 +174,7 @@ class IndexContainer extends React.Component {
         <a-entity
           position="2 0 0">
           <ProductTile
+            waypointPosition="0.125 0.75 0.5"
             onVariantChange={(variant)=> onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.drawer)}
             onCategorySelect={() => onCategoryClick('Chair')}
@@ -194,7 +193,7 @@ class IndexContainer extends React.Component {
         radius="5.7"
         theta-length="36"
         rotation="0 145 0"
-        position="0 4.5 0"
+        position="2 4.5 -3"
       />
     );
   }
@@ -205,9 +204,8 @@ class IndexContainer extends React.Component {
 
   renderCategoriesCarousel() {
     const cat = this.props.userState.currentCategory
-    console.log('what is cat', cat);
+    const products = this.props.userState.categories[cat].products;
 
-    const products = this.props.userState.categories[cat].products
     return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel products={products} onProductClick={this.props.onProductClicked}/>;
   }
 
