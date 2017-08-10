@@ -50,22 +50,19 @@ class ProductColorButton extends React.Component {
             dur: 750;
             delay: ${index} * 50;
             to: ${x} ${y} 0
-          `}
-          rotation="-90 0 0">
+          `}>
           <a-ring
             material="transparent:true; opacity: 0.5;"
             color="white"
             radius-inner="0.1"
             radius-outer="0.125"
-            rotation="90 0 0"
           />
           <a-ring
             color="white"
             radius-inner="0.075"
             radius-outer="0.1"
-            rotation="90 0 0"
           />
-          <a-cylinder
+          <a-circle
             height="0.01"
             radius="0.075"
             color={color}
@@ -78,10 +75,8 @@ class ProductColorButton extends React.Component {
 
   renderBaseButton() {
     return (
-      <a-entity
-        position="0 0 0.01"
-        rotation="-90 0 0">
-        <a-cylinder
+      <a-entity position="0 0 0.01">
+        <a-circle
           radius="0.1"
           height="0.01"
           color="#37474F"
