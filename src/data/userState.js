@@ -1,5 +1,7 @@
-import productData from './product.json'
-var productsList = JSON.parse(productData);
+import productData from './product.json';
+
+// var productsList = JSON.parse(productData);
+const productsList = [];
 
 const initialState = {
   products: productsList,
