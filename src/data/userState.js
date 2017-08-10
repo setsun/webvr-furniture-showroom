@@ -17,7 +17,8 @@ export const ActionTypes = {
   TEXTURE_CHANGE: 'TEXTURE_CHANGE',
   ADD_TO_CART: 'ADD_TO_CART',
   ON_PRODUCT_CLICK: 'ON_PRODUCT_CLICK',
-  ON_CATEGORY_CLICK: 'ON_CATEGORY_CLICK'
+  ON_CATEGORY_CLICK: 'ON_CATEGORY_CLICK',
+  CLOSE_CART: 'CLOSE_CART'
 };
 
 export const onTextureChange = (payload) => ({
@@ -27,6 +28,11 @@ export const onTextureChange = (payload) => ({
 
 export const onProductClick = (id) => ({
   type: ActionTypes.ON_PRODUCT_CLICK,
+  payload:id,
+});
+
+export const closeCart = (id) => ({
+  type: ActionTypes.CLOSE_CART,
   payload:id,
 });
 
@@ -56,6 +62,9 @@ export default (state = initialState, action) => {
     }
     case ActionTypes.ON_PRODUCT_CLICK:{
       return {...state, categoriesCarouselOpen: action.payload};
+    }
+    case ActionTypes.CLOSE_CART:{
+      return {...state , cartCarouselOpen:false };
     }
     default:
       return state;
