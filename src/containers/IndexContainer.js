@@ -63,8 +63,8 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: true,
-      categoriesCarouselOpen: true,
+      cartCarouselOpen: false,
+      categoriesCarouselOpen: false,
       productDescriptionPageOpen: false,
     }
   }
@@ -118,10 +118,6 @@ class IndexContainer extends React.Component {
   }
 
   renderRoom() {
-    if (true) {
-      return null;
-    }
-
     return (
       <a-entity position="0 0.75 -2">
         <ProductTile
