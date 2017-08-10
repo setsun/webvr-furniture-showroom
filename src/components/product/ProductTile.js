@@ -11,6 +11,9 @@ class ProductTile extends React.Component {
     position: PropTypes.string,
     waypointPosition: PropTypes.string,
     product: PropTypes.object,
+    onAddToCart: PropTypes.func,
+    onVariantChange: PropTypes.func,
+    onCategorySelect: PropTypes.func,
   }
 
   static defaultProps = {
@@ -62,7 +65,10 @@ class ProductTile extends React.Component {
     const {
       position,
       waypointPosition,
-      product
+      product,
+      onAddToCart,
+      onVariantChange,
+      onCategorySelect,
     } = this.props;
     const {
       infoOpen
@@ -73,7 +79,14 @@ class ProductTile extends React.Component {
         <a-entity position={waypointPosition}>
           {this.renderWaypointButton()}
           <a-entity position="0.25 0.25 0.01">
-            {infoOpen && <ProductInfoBubble product={product} />}
+            {infoOpen && (
+              <ProductInfoBubble
+                product={product}
+                onAddToCart={onAddToCart}
+                onVariantChange={onVariantChange}
+                onCategorySelect={onCategorySelect}
+              />
+            )}
           </a-entity>
         </a-entity>
         <a-entity

@@ -69,7 +69,6 @@ class IndexContainer extends React.Component {
 
   componentDidMount() {
     // Test redux actions here
-    this.props.onTextureChange();
     console.log(this.state)
     console.log(this.props.userState);
   }
@@ -137,20 +136,35 @@ class IndexContainer extends React.Component {
   }
 
   renderRoom() {
+    const {
+      onCategoryClick,
+      onTextureChange,
+      addToCart
+    } = this.props;
+
     return (
       <a-entity
         position="0 0 -6"
         scale="2 2 2">
         <ProductTile
           position="-1 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.table1.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.table1}
         />
         <ProductTile
           position="0 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.table2.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.table2}
         />
         <ProductTile
           position="1 0 0"
+          onVariantChange={onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.drawer.id)}
+          onCategorySelect={onCategoryClick}
           product={tempData.productMap.drawer}
         />
       </a-entity>
