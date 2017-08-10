@@ -8,7 +8,7 @@ import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 import LoadingScreen from '../components/LoadingScreen';
 
-import {onTextureChange, onProductClick, addToCart, onCategoryClick} from '../data/userState';
+import {onTextureChange, onProductClick, addToCart, onCategoryClick, closeCart} from '../data/userState';
 
 const tempData = {
   productMap: {
@@ -211,7 +211,7 @@ class IndexContainer extends React.Component {
   }
 
   renderCartCarousel() {
-    return this.props.userState.cartCarouselOpen && <CartCarousel products={this.props.userState.cart}/>;
+    return this.props.userState.cartCarouselOpen && <CartCarousel products={this.props.userState.cart} onClick={this.props.closeCart}/>;
   }
 
   renderCategoriesCarousel() {
@@ -244,6 +244,7 @@ const mapDispatchToProps = (dispatch) => {
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
     onProductClicked: (productId) => dispatch(onProductClick(productId)),
     onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId)),
+    closeCart: () => dispatch(closeCart(false))
     // addToCart: (product) => dispatch(addToCart(product))
   };
 };
