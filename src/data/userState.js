@@ -8,7 +8,7 @@ const initialState = {
   currentProduct: 0,
   currentCategory: "",
   cartCarouselOpen: false,
-  categoriesCarouselOpen: false,
+  categoriesCarouselOpen: true,
   cart:[]
 };
 
@@ -56,7 +56,7 @@ export default (state = initialState, action) => {
       return state.cart.concat(action.payload)
     }
     case ActionTypes.ON_PRODUCT_CLICK:{
-      return {...state, currentProduct: action.payload};
+      return {...state, categoriesCarouselOpen: action.payload};
     }
     default:
       return state;
