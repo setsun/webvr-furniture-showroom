@@ -3,7 +3,6 @@ import 'aframe-layout-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 import ProductInfoBubble from './ProductInfoBubble';
 
@@ -20,7 +19,7 @@ class ProductTile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      infoOpen: true,
+      infoOpen: false,
     }
   }
 
@@ -28,6 +27,33 @@ class ProductTile extends React.Component {
     this.setState({
       infoOpen: !this.state.infoOpen
     });
+  }
+
+  renderWaypointButton() {
+    return (
+      <a-entity
+        onClick={() => this.toggleInfoOpen()}>
+        <a-circle
+          color="white"
+          radius="0.05"
+        />
+        <a-ring
+          color="teal"
+          radius-inner="0.05"
+          radius-outer="0.075"
+        />
+        <a-ring
+          color="white"
+          radius-inner="0.075"
+          radius-outer="0.1"
+        />
+        <a-ring
+          color="teal"
+          radius-inner="0.1"
+          radius-outer="0.11"
+        />
+      </a-entity>
+    )
   }
 
   render() {
@@ -39,11 +65,18 @@ class ProductTile extends React.Component {
     } = this.state;
 
     return (
-      <Entity position={position}>
-        <Entity position="0 1 0">
+      <a-entity position={position}>
+        <a-entity position="0 0.75 0">
+          {this.renderWaypointButton()}
+        </a-entity>
+        <a-entity position="0 0.975 0.01">
           {infoOpen && <ProductInfoBubble />}
-        </Entity>
-      </Entity>
+        </a-entity>
+        <a-entity
+          obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl"
+          scale="0.5 0.5 0.5"
+        />
+      </a-entity>
     );
   }
 }

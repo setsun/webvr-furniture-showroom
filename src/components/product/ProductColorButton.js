@@ -2,7 +2,6 @@ import 'aframe-animation-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 class ProductColorButton extends React.Component {
   static propTypes = {
@@ -43,62 +42,49 @@ class ProductColorButton extends React.Component {
       const {x, y} = this.getPosition(0, 0, 0.3, slice * index);
 
       return (
-        <Entity
+        <a-entity
           key={`${color}-${index}`}
-          position={{x: 0, y: 0, z: 0}}
-          animation={{
-            property: 'position',
-            dur: 750,
-            delay: index * 50,
-            to: `${x} ${y} 0`
-          }}
-          rotation="-90 0 0">
+          position="0 0 0"
+          animation={`
+            property: position;
+            dur: 450;
+            elasticity: 300;
+            delay: ${index * 100};
+            easing: easeInOutElastic;
+            to: ${x} ${y} 0
+          `}>
           <a-ring
             material="transparent:true; opacity: 0.5;"
             color="white"
             radius-inner="0.1"
             radius-outer="0.125"
-            rotation="90 0 0"
           />
           <a-ring
             color="white"
             radius-inner="0.075"
             radius-outer="0.1"
-            rotation="90 0 0"
           />
-          <Entity
-            geometry={{
-              primitive: 'cylinder',
-              radius: 0.075,
-              height: 0.01,
-            }}
-            material={{color}}
-            events={{
-              click: () => this.onColorChange(color),
-            }}
+          <a-circle
+            height="0.01"
+            radius="0.075"
+            color={color}
+            onClick={() => this.onColorChange(color)}
           />
-        </Entity>
+        </a-entity>
       )
     });
   }
 
   renderBaseButton() {
     return (
-      <Entity
-        position={{x: 0, y: 0, z: 0.01}}
-        rotation="-90 0 0">
-        <Entity
-          geometry={{
-            primitive: 'cylinder',
-            radius: 0.1,
-            height: 0.01,
-          }}
-          material={{color: '#37474F'}}
-          events={{
-            click: () => this.toggleOpen()
-          }}
+      <a-entity position="0 0 0.01">
+        <a-circle
+          radius="0.1"
+          height="0.01"
+          color="#37474F"
+          onClick={() => this.toggleOpen()}
         />
-      </Entity>
+      </a-entity>
     );
   }
 
@@ -108,10 +94,10 @@ class ProductColorButton extends React.Component {
     } = this.state;
 
     return (
-      <Entity>
+      <a-entity>
         {this.renderBaseButton()}
         {open && this.renderButtons()}
-      </Entity>
+      </a-entity>
     );
   }
 }
