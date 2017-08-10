@@ -167,7 +167,6 @@ class IndexContainer extends React.Component {
             waypointPosition="0.125 1.125 0.25"
             onVariantChange={onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.table2)}
-            onCategorySelect={ () => onCategoryClick('FancyTable')}
             product={tempData.productMap.table2}
           />
         </a-entity>
@@ -177,7 +176,6 @@ class IndexContainer extends React.Component {
             waypointPosition="0.125 0.75 0.5"
             onVariantChange={(variant)=> onTextureChange}
             onAddToCart={() => onAddToCart(tempData.productMap.drawer)}
-            onCategorySelect={() => onCategoryClick('Chair')}
             product={tempData.productMap.drawer}
           />
         </a-entity>
