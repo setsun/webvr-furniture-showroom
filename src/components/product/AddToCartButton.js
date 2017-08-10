@@ -17,13 +17,13 @@ class AddToCartButton extends React.Component {
       <a-entity onClick={() => onAddToCart()}>
         <a-image
           src="#icon-cart-circle"
-          height="0.2"
-          width="0.2"
+          height="0.25"
+          width="0.25"
         />
         <a-ring
           material="transparent: true; opacity: 0.75;"
-          radius-inner="0.1"
-          radius-outer="0.125"
+          radius-inner="0.125"
+          radius-outer="0.15"
         />
       </a-entity>
     );
