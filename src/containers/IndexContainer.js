@@ -15,8 +15,8 @@ const tempData = {
     table1: {
       name: 'Normal Table',
       price: 23.56,
-      modelId: '#table-1-obj',
-      textureId: '#table-1-mtl',
+      modelId: '#jet-table-glassy-obj',
+      textureId: '#jet-table-glassy-mtl',
       colors: [
         '#4CC3D9',
         '#EF2D5E',
@@ -29,8 +29,8 @@ const tempData = {
     table2: {
       name: 'Fancy Table',
       price: 123.54,
-      modelId: '#sq-table-obj',
-      textureId: '#sq-table-mtl',
+      modelId: '#jet-table-purple-obj',
+      textureId: '#jet-table-purple-mtl',
       colors: [
         '#4CC3D9',
         '#EF2D5E',
@@ -62,6 +62,8 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
+      cartCarouselOpen: false,
+      categoriesCarouselOpen: false,
     }
   }
 
@@ -135,22 +137,10 @@ class IndexContainer extends React.Component {
   }
 
   renderRoom() {
-    if (
-      this.props.userState.cartCarouselOpen ||
-      this.props.userState.categoriesCarouselOpen
-    ) {
-      return null;
-    }
-    // const currentCat = this.props.userState.currentCategory
-    // const products = this.props.userState.categories.currentCat.products
-    // const productTiles = products.map((product, index)=>{
-    //   return <productTile
-    //     position={(-2+index)+" 0 0"}
-    //     product={product.currentVariant}
-    //   />
-    //   })
     return (
-      <a-entity position="0 0.75 -2">
+      <a-entity
+        position="0 0 -6"
+        scale="2 2 2">
         <ProductTile
           position="-1 0 0"
           product={tempData.productMap.table1}
@@ -163,7 +153,6 @@ class IndexContainer extends React.Component {
           position="1 0 0"
           product={tempData.productMap.drawer}
         />
-        {/* {productTiles} */}
       </a-entity>
     );
   }
@@ -186,7 +175,9 @@ class IndexContainer extends React.Component {
   }
 
   renderCategoriesCarousel() {
-    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel categories={this.props.userState.categories} onCategoryClick={this.props.onCategoryClick}/>;
+    const cat = this.props.userState.currentCategory
+    console.log('what is cat', cat);
+    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel onProductClick={this.props.onProductClicked}/>;
   }
 
   render () {
