@@ -139,21 +139,21 @@ class IndexContainer extends React.Component {
         <ProductTile
           position="-1 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table1)}
+          onAddToCart={() => onAddToCart(tempData.productMap.table1)}
           onCategorySelect={()=>onCategoryClick('Chair')}
           product={tempData.productMap.table1}
         />
         <ProductTile
           position="0 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table2)}
+          onAddToCart={() => onAddToCart(tempData.productMap.table2)}
           onCategorySelect={ () => onCategoryClick('FancyTable')}
           product={tempData.productMap.table2}
         />
         <ProductTile
           position="1 0 0"
           onVariantChange={(variant)=> onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.drawer)}
+          onAddToCart={() => onAddToCart(tempData.productMap.drawer)}
           onCategorySelect={() => onCategoryClick('Chair')}
           product={tempData.productMap.drawer}
         />
@@ -209,7 +209,7 @@ const mapDispatchToProps = (dispatch) => {
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
     onProductClicked: (productId) => dispatch(onProductClick(productId)),
     onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId)),
-    addToCart: (product) => dispatch(addToCart(product))
+    // addToCart: (product) => dispatch(addToCart(product))
   };
 };
 
