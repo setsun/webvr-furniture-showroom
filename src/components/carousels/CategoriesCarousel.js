@@ -3,7 +3,6 @@ import 'aframe-layout-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 class CategoriesCarousel extends React.Component {
   static propTypes = {
@@ -25,9 +24,9 @@ class CategoriesCarousel extends React.Component {
 
   renderButtons() {
     return (
-      <Entity>
+      <a-entity>
 
-      </Entity>
+      </a-entity>
     );
   }
 
@@ -50,18 +49,14 @@ class CategoriesCarousel extends React.Component {
 
   render() {
     return (
-      <Entity
+      <a-entity
         position="0 2.5 0"
         rotation="-90 0 0"
-        animation={{
-          property: 'position',
-          dur: 1500,
-          to: '0 1.5 0'
-        }}>
+        animation="property: position; dur: 1500; to: 0 1.5 0">
         {this.renderRing()}
         {this.renderButtons()}
         {this.renderProducts()}
-      </Entity>
+      </a-entity>
     );
   }
 }

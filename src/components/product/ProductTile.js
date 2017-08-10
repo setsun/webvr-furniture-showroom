@@ -3,7 +3,6 @@ import 'aframe-layout-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 import ProductInfoBubble from './ProductInfoBubble';
 
@@ -39,11 +38,15 @@ class ProductTile extends React.Component {
     } = this.state;
 
     return (
-      <Entity position={position}>
-        <Entity position="0 1 0">
+      <a-entity position={position}>
+        <a-entity position="0 1 0">
           {infoOpen && <ProductInfoBubble />}
-        </Entity>
-      </Entity>
+        </a-entity>
+        <a-entity
+          obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl"
+          scale="0.5 0.5 0.5"
+        />
+      </a-entity>
     );
   }
 }

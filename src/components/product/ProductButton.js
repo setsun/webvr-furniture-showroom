@@ -2,7 +2,6 @@ import 'aframe-animation-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 class ProductInfoBubble extends React.Component {
   static propTypes = {
@@ -11,7 +10,7 @@ class ProductInfoBubble extends React.Component {
 
   render() {
     return (
-      <Entity>
+      <a-entity>
         <a-cylinder
           height="0.01"
           material="side: double; transparent:true; opacity: 0.5;"
@@ -27,7 +26,7 @@ class ProductInfoBubble extends React.Component {
           radius="0.125"
           width="0.125"
         />
-      </Entity>
+      </a-entity>
     );
   }
 }
