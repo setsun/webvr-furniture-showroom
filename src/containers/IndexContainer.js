@@ -84,6 +84,9 @@ class IndexContainer extends React.Component {
         <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
         <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
 
+        <a-asset-item id="drawer-obj" src="assets/models/drawer/drawer.obj"></a-asset-item>
+        <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
+
         <a-asset-item id="jet-table-glassy-obj" src="assets/models/jet_table/jet_table_glassy.obj"></a-asset-item>
         <a-asset-item id="jet-table-glassy-mtl" src="assets/models/jet_table/jet_table_glassy.mtl"></a-asset-item>
         <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_light_brown.obj"></a-asset-item>
@@ -94,12 +97,11 @@ class IndexContainer extends React.Component {
         <a-asset-item id="jet-table-wood-mtl" src="assets/models/jet_table/jet_table_wood.mtl"></a-asset-item>
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
-        <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
-        <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
-        <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
-        <a-asset-item id="sq-table-mtl" src="assets/models/square_table/square_table.mtl"></a-asset-item>
-        <a-asset-item id="drawer-obj" src="assets/models/drawer/drawer.obj"></a-asset-item>
-        <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
+        <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
+        <a-asset-item id="table-2" src="assets/models/table_2/table.gltf"></a-asset-item>
+
+        <a-asset-item id="office-chair" src="assets/models/office_chair/office-chair.gltf"></a-asset-item>
+        <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/yellow-chair.gltf"></a-asset-item>
       </a-assets>
     );
   }

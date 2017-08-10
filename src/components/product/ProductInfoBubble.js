@@ -35,6 +35,17 @@ class ProductInfoBubble extends React.Component {
     )
   }
 
+  renderDescription() {
+    const {
+      product
+    } = this.props;
+
+    return (
+      <a-entity>
+      </a-entity>
+    );
+  }
+
   render() {
     const {
       product
@@ -43,7 +54,8 @@ class ProductInfoBubble extends React.Component {
     return (
       <a-entity>
         {this.renderBubble()}
-        <a-entity position="0.5 0 0.01">
+        {this.renderDescription()}
+        <a-entity position="-0.25 -0.25 0.01">
           <AddToCartButton
             onAddToCart={() => console.log('ATC clicked!')}
           />
