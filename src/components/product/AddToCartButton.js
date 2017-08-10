@@ -15,10 +15,10 @@ class AddToCartButton extends React.Component {
 
     return (
       <a-entity onClick={() => onAddToCart()}>
-        {false && <a-image src="#icon-add-to-cart" />}
-        <a-circle
-          radius="0.1"
-          color="#8200FF"
+        <a-image
+          src="#icon-cart-circle"
+          height="0.2"
+          width="0.2"
         />
       </a-entity>
     );

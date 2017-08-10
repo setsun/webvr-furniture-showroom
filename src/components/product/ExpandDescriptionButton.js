@@ -15,10 +15,10 @@ class ExpandDescriptionButton extends React.Component {
 
     return (
       <a-entity onClick={() => onExpandDescription()}>
-        {false && <a-image src="#icon-expand" />}
-        <a-circle
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-collapse-circle"
+          height="0.2"
+          width="0.2"
         />
       </a-entity>
     );
