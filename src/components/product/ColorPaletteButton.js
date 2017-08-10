@@ -47,9 +47,9 @@ class ColorPaletteButton extends React.Component {
           position="0 0 0"
           animation={`
             property: position;
-            dur: 450;
+            dur: 400;
             elasticity: 300;
-            delay: ${index * 100};
+            delay: ${index * 75};
             easing: easeInOutElastic;
             to: ${x} ${y} 0
           `}
