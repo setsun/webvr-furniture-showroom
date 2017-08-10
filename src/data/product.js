@@ -1,38 +1,38 @@
 export default {
  "Table" :{
     "CategoryName":"Table",
-    "modelId":"#table-1-obj",
-    "textureId":"#table-1-mtl",
+    "modelId":"#jet-table-obj",
+    "textureId":"#jet-table-mtl",
     "products":
     [{
       "name":"Normal Table",
       "currentVariant":{
-        "modelId":"#table-1-brown-obj",
-        "textureId":"#table-1-brown-mtl"
+        "modelId":"#jet-table-brown-obj",
+        "textureId":"#jet-table-brown-mtl"
       },
       "price": 23.56,
-      "modelId": "#table-1-obj",
+      "modelId": "#jet-table-obj",
       "variants":
         {
           "brown":
             {
-              "modelId":"#table-1-brown-obj",
-              "textureId":"#table-1-brown-mtl"
+              "modelId":"#jet-table-brown-obj",
+              "textureId":"#jet-table-brown-mtl"
             },
-          "glassy":
+          "red":
             {
-              "modelId":"#table-1-glassy-obj",
-              "textureId":"#table-1-glassy-mtl"
+              "modelId":"#jet-table-red-obj",
+              "textureId":"#jet-table-red-mtl"
             },
           "purple":
             {
-              "modelId":"#table-1-purple-obj",
-              "textureId":"#table-1-purple-mtl"
+              "modelId":"#jet-table-purple-obj",
+              "textureId":"#jet-table-purple-mtl"
             },
-          "wood":
+          "yellow":
             {
-              "modelId":"#table-1-wood-obj",
-              "textureId":"#table-1-wood-mtl"
+              "modelId":"#jet-table-yellow-obj",
+              "textureId":"#jet-table-yellow-mtl"
             }
         }
       }]
@@ -107,7 +107,7 @@ export default {
             "textureId": "#chair-mtl"
             }
           }
-      }, 
+      },
         {
         "name":"Office Chair",
         "currentVariant":{
