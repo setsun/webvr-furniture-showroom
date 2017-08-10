@@ -90,7 +90,13 @@ class CategoriesCarousel extends React.Component {
   }
 
   renderProducts() {
+    const products = this.props.products.map((product) => {
+      const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
+      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onProductClicked(product.modelId)}/>
+    });
+
     return (
+      
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
         <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
@@ -102,6 +108,7 @@ class CategoriesCarousel extends React.Component {
         <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
         <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        {products}
       </a-entity>
     );
   }
