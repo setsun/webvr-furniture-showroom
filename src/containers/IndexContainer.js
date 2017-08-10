@@ -4,7 +4,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import ProductTile from '../components/product/ProductTile';
-import ProductDescriptionPage from '../components/product/ProductDescriptionPage';
 import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 import LoadingScreen from '../components/LoadingScreen';
@@ -63,9 +62,8 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: false,
-      categoriesCarouselOpen: false,
-      productDescriptionPageOpen: false,
+      cartCarouselOpen: true,
+      categoriesCarouselOpen: true,
     }
   }
 
@@ -112,12 +110,13 @@ class IndexContainer extends React.Component {
         {this.renderRoom()}
         {this.renderCartCarousel()}
         {this.renderCategoriesCarousel()}
-        {this.renderProductDescriptionPage()}
       </a-entity>
     );
   }
 
   renderRoom() {
+    return null;
+
     return (
       <a-entity position="0 0.75 -2">
         <ProductTile
@@ -157,10 +156,6 @@ class IndexContainer extends React.Component {
 
   renderCategoriesCarousel() {
     return this.state.categoriesCarouselOpen && <CategoriesCarousel />;
-  }
-
-  renderProductDescriptionPage() {
-    return this.state.productDescriptionPageOpen && <ProductDescriptionPage />;
   }
 
   render () {
