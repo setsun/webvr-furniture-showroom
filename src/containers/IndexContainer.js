@@ -100,10 +100,10 @@ class IndexContainer extends React.Component {
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
-        <a-asset-item id="table-2" src="assets/models/table_2/table.gltf"></a-asset-item>
+        <a-asset-item id="table-2" src="assets/models/table_2/attach-demo-table.gltf"></a-asset-item>
 
         <a-asset-item id="office-chair" src="assets/models/office_chair/office-chair.gltf"></a-asset-item>
-        <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/yellow-chair.gltf"></a-asset-item>
+        <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/chair.gltf"></a-asset-item>
       </a-assets>
     );
   }

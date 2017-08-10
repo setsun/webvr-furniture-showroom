@@ -5,80 +5,80 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 10062,
+      "count": 9120,
       "type": "SCALAR",
       "min": [
         0
       ],
       "max": [
-        2044
+        1835
       ]
     },
     "accessor_index_1": {
       "bufferView": "bufferView_1",
-      "byteOffset": 20124,
+      "byteOffset": 18240,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 10062,
+      "type": "SCALAR",
+      "min": [
+        1836
+      ],
+      "max": [
+        3880
+      ]
+    },
+    "accessor_index_2": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 38364,
       "byteStride": 0,
       "componentType": 5123,
       "count": 57984,
       "type": "SCALAR",
       "min": [
-        2045
+        3881
       ],
       "max": [
-        12016
-      ]
-    },
-    "accessor_index_2": {
-      "bufferView": "bufferView_1",
-      "byteOffset": 136092,
-      "byteStride": 0,
-      "componentType": 5123,
-      "count": 10500,
-      "type": "SCALAR",
-      "min": [
-        12017
-      ],
-      "max": [
-        14106
+        13852
       ]
     },
     "accessor_index_3": {
       "bufferView": "bufferView_1",
-      "byteOffset": 157092,
+      "byteOffset": 154332,
       "byteStride": 0,
       "componentType": 5123,
       "count": 20568,
       "type": "SCALAR",
       "min": [
-        14107
+        13853
       ],
       "max": [
-        17642
+        17388
       ]
     },
     "accessor_index_4": {
       "bufferView": "bufferView_1",
-      "byteOffset": 198228,
+      "byteOffset": 195468,
+      "byteStride": 0,
+      "componentType": 5123,
+      "count": 10500,
+      "type": "SCALAR",
+      "min": [
+        17389
+      ],
+      "max": [
+        19478
+      ]
+    },
+    "accessor_index_5": {
+      "bufferView": "bufferView_1",
+      "byteOffset": 216468,
       "byteStride": 0,
       "componentType": 5123,
       "count": 54084,
       "type": "SCALAR",
       "min": [
-        17643
-      ],
-      "max": [
-        27057
-      ]
-    },
-    "accessor_index_5": {
-      "bufferView": "bufferView_1",
-      "byteOffset": 306396,
-      "byteStride": 0,
-      "componentType": 5123,
-      "count": 9120,
-      "type": "SCALAR",
-      "min": [
-        27058
+        19479
       ],
       "max": [
         28893
@@ -91,14 +91,14 @@
       "componentType": 5126,
       "count": 28392,
       "min": [
-        -1.4051330089569092,
+        -0.638159990310669,
         0,
-        -1.4120750427246094
+        -0.6413130164146423
       ],
       "max": [
-        1.4051330089569092,
-        4.293588161468506,
-        1.621258020401001
+        0.638159990310669,
+        1.9499919414520264,
+        0.736316978931427
       ],
       "type": "VEC3"
     },
@@ -362,7 +362,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_0",
-          "material": "material_screws",
+          "material": "material_Ceramiks_y",
           "mode": 4
         },
         {
@@ -371,7 +371,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_1",
-          "material": "material_w",
+          "material": "material_screws",
           "mode": 4
         },
         {
@@ -380,7 +380,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_2",
-          "material": "material_rubbers",
+          "material": "material_w",
           "mode": 4
         },
         {
@@ -398,7 +398,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_4",
-          "material": "material__Black",
+          "material": "material_rubbers",
           "mode": 4
         },
         {
@@ -407,7 +407,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_5",
-          "material": "material_Ceramiks_y",
+          "material": "material__Black",
           "mode": 4
         }
       ]

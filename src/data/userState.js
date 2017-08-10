@@ -7,8 +7,8 @@ const initialState = {
   categories: catagoryList,
   currentProduct: 0,
   currentCategory: "",
-  cartCarouselOpen: false,
-  categoriesCarouselOpen: true,
+  cartCarouselOpen: true,
+  categoriesCarouselOpen: false,
   cart:[]
 };
 
