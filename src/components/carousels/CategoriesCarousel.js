@@ -9,12 +9,38 @@ class CategoriesCarousel extends React.Component {
     products: PropTypes.array,
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rotationDegrees: 0
+    }
+  }
+
   rotateLeft() {
-    this.setState({});
+    const currentDegrees = this.state.rotationDegrees || 0;
+
+    this.setState({rotationDegrees: currentDegrees - 60});
   }
 
   rotateRight() {
-    this.setState({});
+    const currentDegrees = this.state.rotationDegrees || 0;
+
+    this.setState({rotationDegrees: currentDegrees + 60});
+  }
+
+  rotateAnimation() {
+    const {rotationDegrees} = this.state;
+
+    return (
+      <a-animation
+        key={Date.now()}
+        attribute="rotation"
+        easing="linear"
+        dur="500"
+        to={`0 0 ${rotationDegrees}`}
+      />
+    );
   }
 
   renderRing() {
@@ -72,9 +98,12 @@ class CategoriesCarousel extends React.Component {
         position="0 2.5 0"
         rotation="-90 0 0"
         animation="property: position; dur: 1500; to: 0 1.5 0">
-        {this.renderRing()}
+        <a-entity>
+          {this.rotateAnimation()}
+          {this.renderRing()}
+          {this.renderProducts()}
+        </a-entity>
         {this.renderButtons()}
-        {this.renderProducts()}
       </a-entity>
     );
   }
