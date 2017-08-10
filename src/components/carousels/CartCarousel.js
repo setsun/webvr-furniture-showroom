@@ -23,16 +23,16 @@ class CartCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #table-1-obj; mtl: #table-1-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
       </a-entity>
     );
   }
