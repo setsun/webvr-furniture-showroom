@@ -1,22 +1,55 @@
 [
   {
-    "name":"table",
-    "currentTextureId":"wood",
-    "textures":["wood","steel","fabric"],
-    "prices": [
-      {"texture":"wood", "price": 12.34},
-      {"texture":"steel", "price": 12.34},
-      {"texture":"fabric", "price": 12.34}
-    ]
+    "name":"Normal Table",
+    "currentVariant":"brown",
+    // "textures":["wood","steel","fabric"],
+    "price": 23.56,
+    "modelId": "#table-1-obj",
+    
+    "variants": 
+    {
+      "brown":
+        {
+          "modelid":"#table-1-brown-obj",
+          "texureid":"#table-1-brown-mtl",
+        }
+        //replace these
+        // "#EF2D5E",
+        // "#FFC65D",
+        // "#8200AF",
+        // "#999999",
+        // "#FCF838"
+    }
   },
   {
-    "name":"chair",
-    "currentTextureId":"wood",
-    "textures":["wood","steel","fabric"],
-    "prices": [
-      {"texture":"wood", "price": 12.34},
-      {"texture":"steel", "price": 12.34},
-      {"texture":"fabric", "price": 12.34}
-    ]
-  }
+    "name":"Fancy Table",
+    "currentVariant":"#4CC3D9",
+    // "textures":["wood","steel","fabric"],
+    "prices": 123.54,
+    "modelId": "#sq-table-obj",
+    "textureId": "#sq-table-mtl",
+    "colors": [
+        "#4CC3D9",
+        "#EF2D5E",
+        "#FFC65D",
+        "#8200AF",
+        "#999999",
+        "#FCF838"
+      ]
+  },
+  {
+      "name": "Fancy Drawer",
+      "price": 423.45,
+      "modelId": "#drawer-obj",
+      "textureId": "#drawer-mtl",
+      "currentVariant": "#4CC3D9",
+      "colors": [
+        "#4CC3D9",
+        "#EF2D5E",
+        "#FFC65D",
+        "#8200AF",
+        "#999999",
+        "#FCF838"
+      ]
+    }
 ]
