@@ -73,16 +73,18 @@ class CategoriesCarousel extends React.Component {
   renderButtons() {
     return (
       <a-entity position="0 1.75 -0.2" rotation="90 0 0">
-        <a-circle
-          position="0.75 0 0"
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-left-circle"
+          position="-0.75 0 0"
+          height="0.2"
+          width="0.2"
           onClick={() => this.rotateLeft()}
         />
-        <a-circle
-          position="-0.75 0 0"
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-right-circle"
+          position="0.75 0 0"
+          height="0.2"
+          width="0.2"
           onClick={() => this.rotateRight()}
         />
       </a-entity>
