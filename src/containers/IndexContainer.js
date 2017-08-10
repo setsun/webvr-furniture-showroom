@@ -85,8 +85,21 @@ class IndexContainer extends React.Component {
         <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
         <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
 
+        <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_brown.obj"></a-asset-item>
+        <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_brown.mtl"></a-asset-item>
+
+        <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
+        <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
+
+        <a-asset-item id="jet-table-red-obj" src="assets/models/jet_table/jet_table_red.obj"></a-asset-item>
+        <a-asset-item id="jet-table-red-mtl" src="assets/models/jet_table/jet_table_red.mtl"></a-asset-item>
+
+        <a-asset-item id="jet-table-yellow-obj" src="assets/models/jet_table/jet_table_yellow.obj"></a-asset-item>
+        <a-asset-item id="jet-table-yellow-mtl" src="assets/models/jet_table/jet_table_yellow.mtl"></a-asset-item>
+
         <a-asset-item id="drawer-obj" src="assets/models/drawer/drawer.obj"></a-asset-item>
         <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
+
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
@@ -181,7 +194,7 @@ class IndexContainer extends React.Component {
   renderCategoriesCarousel() {
     const cat = this.props.userState.currentCategory
     console.log('what is cat', cat);
-    
+
     const products = this.props.userState.categories[cat].products
     return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel products={products} onProductClick={this.props.onProductClicked}/>;
   }
