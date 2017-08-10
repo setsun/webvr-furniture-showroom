@@ -18,16 +18,18 @@ class ProductInfoBubble extends React.Component {
     } = this.props;
 
     return (
-      <a-entity position="0 0 0.01">
-        <AddToCartButton
-          onAddToCart={() => console.log('ATC clicked!')}
-        />
-        <a-entity position="0.75 0.25 0">
+      <a-entity>
+        <a-entity position="0.5 0 0.01">
+          <AddToCartButton
+            onAddToCart={() => console.log('ATC clicked!')}
+          />
+        </a-entity>
+        <a-entity position="0.75 0 0.02">
           <ExpandDescriptionButton
             onExpandDescription={() => console.log('ED clicked!')}
           />
         </a-entity>
-        <a-entity position="1 0.25 0">
+        <a-entity position="1 0 0.03">
           <ColorPaletteButton
             colors={product.colors}
           />
