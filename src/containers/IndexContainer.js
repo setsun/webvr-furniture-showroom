@@ -84,6 +84,15 @@ class IndexContainer extends React.Component {
         <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
         <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
 
+        <a-asset-item id="jet-table-glassy-obj" src="assets/models/jet_table/jet_table_glassy.obj"></a-asset-item>
+        <a-asset-item id="jet-table-glassy-mtl" src="assets/models/jet_table/jet_table_glassy.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_light_brown.obj"></a-asset-item>
+        <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_light_brown.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
+        <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-wood-obj" src="assets/models/jet_table/jet_table_wood.obj"></a-asset-item>
+        <a-asset-item id="jet-table-wood-mtl" src="assets/models/jet_table/jet_table_wood.mtl"></a-asset-item>
+
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
