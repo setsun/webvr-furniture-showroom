@@ -13,6 +13,10 @@ class ProductInfoBubble extends React.Component {
   }
 
   render() {
+    const {
+      product
+    } = this.props;
+
     return (
       <a-entity position="0 0 0.01">
         <AddToCartButton
@@ -25,14 +29,7 @@ class ProductInfoBubble extends React.Component {
         </a-entity>
         <a-entity position="1 0.25 0">
           <ColorPaletteButton
-            colors={[
-              '#4CC3D9',
-              '#EF2D5E',
-              '#FFC65D',
-              '#8200AF',
-              '#999999',
-              '#FCF838'
-            ]}
+            colors={product.colors}
           />
         </a-entity>
       </a-entity>
