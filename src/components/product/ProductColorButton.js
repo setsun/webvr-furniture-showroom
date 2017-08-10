@@ -47,8 +47,10 @@ class ProductColorButton extends React.Component {
           position="0 0 0"
           animation={`
             property: position;
-            dur: 750;
-            delay: ${index} * 50;
+            dur: 450;
+            elasticity: 300;
+            delay: ${index * 100};
+            easing: easeInOutElastic;
             to: ${x} ${y} 0
           `}>
           <a-ring
