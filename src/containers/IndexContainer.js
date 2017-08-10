@@ -92,6 +92,8 @@ class IndexContainer extends React.Component {
         <a-asset-item id="jet-table-glassy-mtl" src="assets/models/jet_table/jet_table_glassy.mtl"></a-asset-item>
         <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_light_brown.obj"></a-asset-item>
         <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_light_brown.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-blue-obj" src="assets/models/jet_table/jet_table_blue.obj"></a-asset-item>
+        <a-asset-item id="jet-table-blue-mtl" src="assets/models/jet_table/jet_table_blue.mtl"></a-asset-item>
         <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
         <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
         <a-asset-item id="jet-table-wood-obj" src="assets/models/jet_table/jet_table_wood.obj"></a-asset-item>
@@ -139,7 +141,7 @@ class IndexContainer extends React.Component {
     const {
       onCategoryClick,
       onTextureChange,
-      addToCart
+      onAddToCart
     } = this.props;
 
     return (
@@ -149,21 +151,21 @@ class IndexContainer extends React.Component {
         <ProductTile
           position="-1 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table1.id)}
+          onAddToCart={() => onAddToCart(tempData.productMap.table1.id)}
           onCategorySelect={onCategoryClick}
           product={tempData.productMap.table1}
         />
         <ProductTile
           position="0 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table2.id)}
+          onAddToCart={() => onAddToCart(tempData.productMap.table2.id)}
           onCategorySelect={onCategoryClick}
           product={tempData.productMap.table2}
         />
         <ProductTile
           position="1 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.drawer.id)}
+          onAddToCart={() => onAddToCart(tempData.productMap.drawer.id)}
           onCategorySelect={onCategoryClick}
           product={tempData.productMap.drawer}
         />
@@ -213,6 +215,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    onAddToCart: (productId) => dispatch(addToCart(productId)),
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
     onProductClicked: (productId) => dispatch(onProductClick(productId)),
     onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId))
