@@ -92,16 +92,17 @@ class CartCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
       </a-entity>
     );
   }
