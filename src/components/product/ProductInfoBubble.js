@@ -38,7 +38,9 @@ class ProductInfoBubble extends React.Component {
     } = this.props;
 
     return (
-      <a-entity>
+      <a-entity position="-0.15 0.75 0">
+        <a-text position="0 0 0" value="Fancy Table" color="#000000"/>
+        <a-text position="0 -0.35 0" value="$12.56" color="#8200FF"/>
       </a-entity>
     );
   }
