@@ -2,7 +2,6 @@ import 'aframe-animation-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 import ProductColorButton from './ProductColorButton';
 
@@ -13,7 +12,7 @@ class ProductInfoBubble extends React.Component {
 
   render() {
     return (
-      <Entity>
+      <a-entity>
         <ProductColorButton
           colors={[
             '#4CC3D9',
@@ -24,7 +23,7 @@ class ProductInfoBubble extends React.Component {
             '#FCF838'
           ]}
         />
-      </Entity>
+      </a-entity>
     );
   }
 }

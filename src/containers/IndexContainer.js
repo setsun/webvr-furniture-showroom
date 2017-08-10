@@ -2,9 +2,9 @@ import 'aframe-animation-component';
 
 import React from 'react';
 import {connect} from 'react-redux';
-import {Entity, Scene} from 'aframe-react';
 
 import ProductTile from '../components/product/ProductTile';
+import ProductDescriptionPage from '../components/product/ProductDescriptionPage';
 import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 
@@ -14,8 +14,9 @@ class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartCarouselOpen: true,
+      cartCarouselOpen: false,
       categoriesCarouselOpen: true,
+      productDescriptionPageOpen: false,
     }
   }
 
@@ -38,17 +39,20 @@ class IndexContainer extends React.Component {
     );
   }
 
-  renderController() {
+  renderCamera() {
     return (
-      <Entity daydream-controls="hand: right" />
-    );
+      <a-camera>
+        <a-cursor></a-cursor>
+        <a-entity daydream-controls="hand: right"></a-entity>
+      </a-camera>
+    )
   }
 
   renderRoom() {
     return (
-      <Entity>
+      <a-entity>
         <ProductTile />
-      </Entity>
+      </a-entity>
     );
   }
 
@@ -60,19 +64,21 @@ class IndexContainer extends React.Component {
     return this.state.categoriesCarouselOpen && <CategoriesCarousel />
   }
 
+  renderProductDescriptionPage() {
+    return this.state.productDescriptionPageOpen && <ProductDescriptionPage />
+  }
+
   render () {
     return (
-      <Scene>
-        <a-camera>
-          <a-cursor></a-cursor>
-        </a-camera>
+      <a-scene>
         <a-sky color="#6EBAA7"></a-sky>
         {this.provideAssets()}
-        {this.renderController()}
+        {this.renderCamera()}
         {this.renderRoom()}
         {this.renderCartCarousel()}
         {this.renderCategoriesCarousel()}
-      </Scene>
+        {this.renderProductDescriptionPage()}
+      </a-scene>
     );
   }
 }
