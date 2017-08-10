@@ -93,11 +93,15 @@ class CategoriesCarousel extends React.Component {
 
   renderProducts() {
     return (
-      <a-entity layout="type: circle; margin: 6; radius: 3.25" >
+      <a-entity layout="type: circle; margin: 6; radius: 3.25">
         <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' onClick={()=>{this.props.onProductClick(false)}}/>
         <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' onClick={()=>{this.props.onProductClick(false)}}/>
         <a-entity obj-model="obj: #jet-table-red-obj; mtl: #jet-table-red-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
         <a-entity obj-model="obj: #jet-table-yellow-obj; mtl: #jet-table-yellow-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-gltf-model src="#table-2" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' onClick={()=>{this.props.onProductClick(false)}}/>
       </a-entity>
 
     );
