@@ -13,7 +13,7 @@ import {onTextureChange, onProductClick, addToCart, onCategoryClick, closeCart} 
 const tempData = {
   productMap: {
     table1: {
-      name: 'Normal Table',
+      name: 'King Sofa',
       price: 23.56,
       modelId: '#jet-table-brown-obj',
       textureId: '#jet-table-brown-mtl',
@@ -41,7 +41,7 @@ const tempData = {
       ]
     },
     table2: {
-      name: 'Fancy Table',
+      name: 'Plain Table',
       price: 123.54,
       modelId: '#sofa',
       textureId: null,
@@ -55,7 +55,7 @@ const tempData = {
       ]
     },
     drawer: {
-      name: 'Fancy Drawer',
+      name: 'Some Drawer',
       price: 423.45,
       modelId: '#drawer-obj',
       textureId: '#drawer-mtl',
