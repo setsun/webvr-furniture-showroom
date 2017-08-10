@@ -3,7 +3,7 @@ import 'aframe-animation-component';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ProductColorButton extends React.Component {
+class ColorPaletteButton extends React.Component {
   static propTypes = {
     colors: PropTypes.array.isRequired,
     currentColor: PropTypes.string,
@@ -52,7 +52,8 @@ class ProductColorButton extends React.Component {
             delay: ${index * 100};
             easing: easeInOutElastic;
             to: ${x} ${y} 0
-          `}>
+          `}
+          onClick={() => this.onColorChange(color)}>
           <a-ring
             material="transparent:true; opacity: 0.5;"
             color="white"
@@ -65,10 +66,8 @@ class ProductColorButton extends React.Component {
             radius-outer="0.1"
           />
           <a-circle
-            height="0.01"
             radius="0.075"
             color={color}
-            onClick={() => this.onColorChange(color)}
           />
         </a-entity>
       )
@@ -77,12 +76,13 @@ class ProductColorButton extends React.Component {
 
   renderBaseButton() {
     return (
-      <a-entity position="0 0 0.01">
+      <a-entity
+        position="0 0 0.01"
+        onClick={() => this.toggleOpen()}>
+        {false && <a-image src="#icon-change-color" />}
         <a-circle
           radius="0.1"
-          height="0.01"
           color="#37474F"
-          onClick={() => this.toggleOpen()}
         />
       </a-entity>
     );
@@ -102,4 +102,4 @@ class ProductColorButton extends React.Component {
   }
 }
 
-export default ProductColorButton;
+export default ColorPaletteButton;

@@ -69,7 +69,7 @@ class ProductTile extends React.Component {
         <a-entity position="0 0.75 0">
           {this.renderWaypointButton()}
         </a-entity>
-        <a-entity position="0 0.975 0.01">
+        <a-entity position="0 0.75 0.01">
           {infoOpen && <ProductInfoBubble />}
         </a-entity>
         <a-entity
