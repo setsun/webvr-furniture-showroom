@@ -31,12 +31,14 @@ export const addToCart = id => ({
 });
 
 export default (state = initialState, action) => {
+  console.log('Action Fired:', action.type);
+  console.log('Action Payload: ', action.payload);
+
   switch (action.type) {
     case ActionTypes.TEXTURE_CHANGE: {
-      console.log("clicked ", action)
       //what texture was clicked
       //change the state of object
-      return state.concat(action.payload);
+      return state;
     }
     case ActionTypes.ADD_TO_CART:{
       return state.cart.concat(action.payload)
