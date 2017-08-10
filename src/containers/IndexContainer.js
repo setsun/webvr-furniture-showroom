@@ -8,7 +8,7 @@ import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 import LoadingScreen from '../components/LoadingScreen';
 
-import {onTextureChange} from '../data/userState';
+import {onTextureChange, onProductClick, addToCart, onCategoryClick} from '../data/userState';
 
 const tempData = {
   productMap: {
@@ -62,7 +62,7 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: true,
+      cartCarouselOpen: false,
       categoriesCarouselOpen: false,
     }
   }
@@ -70,6 +70,8 @@ class IndexContainer extends React.Component {
   componentDidMount() {
     // Test redux actions here
     this.props.onTextureChange();
+    console.log(this.state)
+    console.log(this.props.userState);
   }
 
   provideAssets() {
@@ -169,11 +171,11 @@ class IndexContainer extends React.Component {
   }
 
   renderCartCarousel() {
-    return this.state.cartCarouselOpen && <CartCarousel />;
+    return this.props.userState.cartCarouselOpen && <CartCarousel />;
   }
 
   renderCategoriesCarousel() {
-    return this.state.categoriesCarouselOpen && <CategoriesCarousel />;
+    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel categories={this.props.userState.categories} onCategoryClick={this.props.onCategoryClick}/>;
   }
 
   render () {
@@ -190,12 +192,14 @@ class IndexContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return state;
+  return {userState : state.userState};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onTextureChange: (textureId) => dispatch(onTextureChange(textureId))
+    onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
+    onProductClicked: (productId) => dispatch(onProductClick(productId)),
+    onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId))
   };
 };
 

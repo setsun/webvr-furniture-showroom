@@ -1,18 +1,22 @@
 import productData from './product.json';
 
-// var productsList = JSON.parse(productData);
-const productsList = [];
+// var productsList = JSON.(productData);
+const catagoryList = [];
 
 const initialState = {
-  products: productsList,
-  currentSelectedProductId: 0,
+  categories: catagoryList,
+  currentProduct: 0,
+  currentCategory: "",
+  cartCarouselOpen: false,
+  categoriesCarouselOpen: false,
   cart:[]
 };
 
 export const ActionTypes = {
   TEXTURE_CHANGE: 'TEXTURE_CHANGE',
   ADD_TO_CART: 'ADD_TO_CART',
-  ON_PRODUCT_CLICK: 'ON_PRODUCT_CLICK'
+  ON_PRODUCT_CLICK: 'ON_PRODUCT_CLICK',
+  ON_CATEGORY_CLICK: 'ON_CATEGORY_CLICK'
 };
 
 export const onTextureChange = (payload) => ({
@@ -23,6 +27,11 @@ export const onTextureChange = (payload) => ({
 export const onProductClick = (id) => ({
   type: ActionTypes.ON_PRODUCT_CLICK,
   payload:id,
+});
+
+export const onCategoryClick = id => ({
+  type: ActionTypes.ON_CATEGORY_CLICK,
+  payload: id,
 });
 
 export const addToCart = id => ({
@@ -40,11 +49,14 @@ export default (state = initialState, action) => {
       //change the state of object
       return state;
     }
+    case ActionTypes.ON_CATEGORY_CLICK:{
+      return {...state, currentCategory:action.payload, categoriesCarouselOpen:false};
+    }
     case ActionTypes.ADD_TO_CART:{
       return state.cart.concat(action.payload)
     }
     case ActionTypes.ON_PRODUCT_CLICK:{
-      return {...state, currentProductId: action.payload};
+      return {...state, currentProduct: action.payload};
     }
     default:
       return state;
