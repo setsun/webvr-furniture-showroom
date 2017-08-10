@@ -1,16 +1,31 @@
-import productData from './product.json';
+import productData from './product.js';
 
-// var productsList = JSON.(productData);
-const catagoryList = [];
+// var productsList = JSON.parse(productData);
+console.log("product list is ", productData);
+// const catagoryList = [];
 
 const initialState = {
-  categories: catagoryList,
+  categories: productData,
   currentProduct: 0,
-  currentCategory: "",
+  currentCategory: "Chair",
   cartCarouselOpen: true,
   categoriesCarouselOpen: false,
   cart:[]
 };
+// {
+//       name: 'Fancy Drawer',
+//       price: 423.45,
+//       modelId: '#drawer-obj',
+//       textureId: '#drawer-mtl',
+//       colors: [
+//         '#4CC3D9',
+//         '#EF2D5E',
+//         '#FFC65D',
+//         '#8200AF',
+//         '#999999',
+//         '#FCF838'
+//       ]
+//     }
 
 export const ActionTypes = {
   TEXTURE_CHANGE: 'TEXTURE_CHANGE',
