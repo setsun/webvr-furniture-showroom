@@ -15,7 +15,7 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       cartCarouselOpen: false,
-      categoriesCarouselOpen: true,
+      categoriesCarouselOpen: false,
       productDescriptionPageOpen: false,
     }
   }
@@ -27,8 +27,9 @@ class IndexContainer extends React.Component {
   provideAssets() {
     return (
       <a-assets>
-        <a-asset-item id="icon-change-color" src="assets/images/icon-change-color.png"></a-asset-item>
-        <a-asset-item id="icon-add-to-cart" src="assets/images/icon-add-to-cart.png"></a-asset-item>
+        <img id="icon-change-color" src="assets/images/icon-change-color.png"></img>
+        <img id="icon-add-to-cart" src="assets/images/icon-add-to-cart.png"></img>
+        <img id="icon-expand" src="assets/images/icon-expand.png"></img>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
