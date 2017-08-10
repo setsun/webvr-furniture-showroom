@@ -29,12 +29,12 @@ const tempData = {
           color: '#8200FF'
         },
         {
-          modelId: '#jet-table-red-mtl',
+          modelId: '#jet-table-red-obj',
           textureId: '#jet-table-red-mtl',
           color: '#EF2D5E'
         },
         {
-          modelId: '#jet-table-yellow-mtl',
+          modelId: '#jet-table-yellow-obj',
           textureId: '#jet-table-yellow-mtl',
           color: '#FCF838'
         },
