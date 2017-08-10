@@ -62,8 +62,8 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: true,
-      categoriesCarouselOpen: true,
+      cartCarouselOpen: false,
+      categoriesCarouselOpen: false,
     }
   }
 
@@ -76,6 +76,9 @@ class IndexContainer extends React.Component {
     return (
       <a-assets timeout="0">
         <img id="icon-jet-circle" src="assets/images/icon-jet-circle.png"></img>
+        <img id="icon-cart-circle" src="assets/images/icon-cart-circle.png"></img>
+        <img id="icon-color-circle" src="assets/images/icon-color-circle.png"></img>
+        <img id="icon-collapse-circle" src="assets/images/icon-collapse-circle.png"></img>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
@@ -115,7 +118,12 @@ class IndexContainer extends React.Component {
   }
 
   renderRoom() {
-    return null;
+    if (
+      this.state.cartCarouselOpen ||
+      this.state.categoriesCarouselOpen
+    ) {
+      return null;
+    }
 
     return (
       <a-entity position="0 0.75 -2">
