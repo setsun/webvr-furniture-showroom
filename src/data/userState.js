@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
       return state;
     }
     case ActionTypes.ON_CATEGORY_CLICK:{
-      return {...state, currentCategory:action.payload, categoriesCarouselOpen:false};
+      return {...state, currentCategory:action.payload, categoriesCarouselOpen:true};
     }
     case ActionTypes.ADD_TO_CART:{
       return state.cart.concat(action.payload)
