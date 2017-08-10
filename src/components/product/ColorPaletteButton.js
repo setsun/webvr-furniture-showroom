@@ -34,6 +34,31 @@ class ColorPaletteButton extends React.Component {
     this.setState({open: !this.state.open});
   }
 
+  getEnterAnimationObject(x, y, index) {
+    const position = '0 0 0';
+    const animation = `
+      property: position;
+      dur: 400;
+      elasticity: 300;
+      delay: ${index * 75};
+      easing: easeInOutElastic;
+      to: ${x} ${y} 0
+    `;
+
+    return {position, animation};
+  }
+
+  getExitAnimationObject(x, y) {
+    const position = `${x} ${y} 0`;
+    const animation = `
+      property: position;
+      dur: 400;
+      elasticity: 300;
+      easing: easeInOutElastic;
+      to: 0 0 0
+    `;
+  }
+
   renderButtons() {
     const {colors} = this.props;
     const slice = (2 * Math.PI) / (colors.length - 1);
