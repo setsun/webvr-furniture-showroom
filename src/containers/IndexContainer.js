@@ -175,7 +175,9 @@ class IndexContainer extends React.Component {
   }
 
   renderCategoriesCarousel() {
-    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel categories={this.props.userState.categories} onCategoryClick={this.props.onCategoryClick}/>;
+    const cat = this.props.userState.currentCategory
+    console.log('what is cat', cat);
+    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel onProductClick={this.props.onProductClicked}/>;
   }
 
   render () {
