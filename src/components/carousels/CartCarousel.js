@@ -9,12 +9,38 @@ class CartCarousel extends React.Component {
     products: PropTypes.array,
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rotationDegrees: 0
+    }
+  }
+
   rotateLeft() {
-    this.setState({});
+    const currentDegrees = this.state.rotationDegrees || 0;
+
+    this.setState({rotationDegrees: currentDegrees - 60});
   }
 
   rotateRight() {
-    this.setState({});
+    const currentDegrees = this.state.rotationDegrees || 0;
+
+    this.setState({rotationDegrees: currentDegrees + 60});
+  }
+
+  rotateAnimation() {
+    const {rotationDegrees} = this.state;
+
+    return (
+      <a-animation
+        key={Date.now()}
+        attribute="rotation"
+        easing="linear"
+        dur="500"
+        to={`0 0 ${rotationDegrees}`}
+      />
+    );
   }
 
   renderRing() {
@@ -74,9 +100,12 @@ class CartCarousel extends React.Component {
           dur: 2000;
           to: 1 1 1
         `}>
-        {this.renderRing()}
+        <a-entity>
+          {this.rotateAnimation()}
+          {this.renderRing()}
+          {this.renderProducts()}
+        </a-entity>
         {this.renderButtons()}
-        {this.renderProducts()}
       </a-entity>
     );
   }
