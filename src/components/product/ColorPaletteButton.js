@@ -104,10 +104,10 @@ class ColorPaletteButton extends React.Component {
       <a-entity
         position="0 0 0.01"
         onClick={() => this.toggleOpen()}>
-        {false && <a-image src="#icon-change-color" />}
-        <a-circle
-          radius="0.1"
-          color="#37474F"
+        <a-image
+          src="#icon-color-circle"
+          height="0.2"
+          width="0.2"
         />
       </a-entity>
     );
