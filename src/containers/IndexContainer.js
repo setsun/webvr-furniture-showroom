@@ -8,7 +8,7 @@ import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 import LoadingScreen from '../components/LoadingScreen';
 
-import {onTextureChange, onProductClick, addToCart} from '../data/userState';
+import {onTextureChange, onProductClick, addToCart, onCategoryClick} from '../data/userState';
 
 const tempData = {
   productMap: {
@@ -62,14 +62,13 @@ class IndexContainer extends React.Component {
     super(props);
     this.state = {
       loadingScreenOpen: false,
-      cartCarouselOpen: true,
-      categoriesCarouselOpen: true,
     }
   }
 
   componentDidMount() {
     // Test redux actions here
     this.props.onTextureChange();
+    console.log(this.state)
     console.log(this.props.userState);
   }
 
@@ -135,12 +134,19 @@ class IndexContainer extends React.Component {
 
   renderRoom() {
     if (
-      this.state.cartCarouselOpen ||
-      this.state.categoriesCarouselOpen
+      this.props.userState.cartCarouselOpen ||
+      this.props.userState.categoriesCarouselOpen
     ) {
       return null;
     }
-
+    const currentCat = this.props.userState.currentCategory
+    const products = this.props.userState.categories.currentCat.products
+    const productTiles = products.map((product, index)=>{
+      return <productTile
+        position={(-2+index)+" 0 0"}
+        product={product.currentVariant}
+      />
+      })
     return (
       <a-entity position="0 0.75 -2">
         <ProductTile
@@ -155,6 +161,7 @@ class IndexContainer extends React.Component {
           position="1 0 0"
           product={tempData.productMap.drawer}
         />
+        {productTiles}
       </a-entity>
     );
   }
@@ -173,11 +180,11 @@ class IndexContainer extends React.Component {
   }
 
   renderCartCarousel() {
-    return this.state.cartCarouselOpen && <CartCarousel userState ={this.props.userState.products}/>;
+    return this.props.userState.cartCarouselOpen && <CartCarousel />;
   }
 
   renderCategoriesCarousel() {
-    return this.state.categoriesCarouselOpen && <CategoriesCarousel />;
+    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel categories={this.props.userState.categories} onCategoryClick={this.props.onCategoryClick}/>;
   }
 
   render () {
@@ -200,7 +207,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
-    onProductClicked: (productId) => dispatch(onProductClick(productId))
+    onProductClicked: (productId) => dispatch(onProductClick(productId)),
+    onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId))
   };
 };
 

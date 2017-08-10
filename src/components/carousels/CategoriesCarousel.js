@@ -92,9 +92,9 @@ class CategoriesCarousel extends React.Component {
   }
 
   renderProducts() {
-    const products = this.props.products.map((product) => {
-      const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
-      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onProductClicked(product.modelId)}/>
+    const products = this.props.categories.map((category) => {
+      const model = "obj: "+category.modelId+"; mtl:"+ category.textureId;
+      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick(category.modelId)}/>
     });
 
     return (
