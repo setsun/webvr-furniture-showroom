@@ -82,6 +82,7 @@ class IndexContainer extends React.Component {
         <img id="icon-expand-circle" src="assets/images/icon-expand-circle.png"></img>
         <img id="icon-left-circle" src="assets/images/icon-left-circle.png"></img>
         <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
+        <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
@@ -150,16 +151,14 @@ class IndexContainer extends React.Component {
 
   renderLogo() {
     return (
-      <a-entity position="2 4 -6">
-        <a-image
-          src="#icon-jet-circle"
-        />
-        <a-entity
-          text="value: VR;"
-          scale="15 15 15"
-          position="8 0 0"
-        />
-      </a-entity>
+      <a-curvedimage
+        src="#logo-jet-vr"
+        height="1"
+        radius="5.7"
+        theta-length="36"
+        rotation="0 145 0"
+        position="0 4.5 0"
+      />
     );
   }
 
