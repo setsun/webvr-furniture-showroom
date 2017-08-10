@@ -9,7 +9,7 @@ const initialState = {
   currentProduct: 0,
   currentCategory: "Chair",
   cartCarouselOpen: false,
-  categoriesCarouselOpen: false,
+  categoriesCarouselOpen: true,
   cart:[]
 };
 
