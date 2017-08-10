@@ -10,6 +10,53 @@ import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
 
 import {onTextureChange} from '../data/userState';
 
+const tempData = {
+  productMap: {
+    table1: {
+      name: 'Normal Table',
+      price: 23.56,
+      modelId: '#table-1-obj',
+      textureId: '#table-1-mtl',
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    table2: {
+      name: 'Fancy Table',
+      price: 123.54,
+      modelId: '#sq-table-obj',
+      textureId: '#sq-table-mtl',
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    drawer: {
+      name: 'Fancy Drawer',
+      price: 423.45,
+      modelId: '#drawer-obj',
+      textureId: '#drawer-mtl',
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    }
+  }
+}
+
 class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -48,25 +95,19 @@ class IndexContainer extends React.Component {
 
   renderRoom() {
     return (
-      <a-entity>
-        <a-entity
-          position="-1 0 0">
-          <ProductTile
-
-          />
-        </a-entity>
-        <a-entity
-          position="0 0 0">
-          <ProductTile
-
-          />
-        </a-entity>
-        <a-entity
-          position="1 0 0">
-          <ProductTile
-
-          />
-        </a-entity>
+      <a-entity position="0 0.75 -2">
+        <ProductTile
+          position="-1 0 0"
+          product={tempData.productMap.table1}
+        />
+        <ProductTile
+          position="0 0 0"
+          product={tempData.productMap.table2}
+        />
+        <ProductTile
+          position="1 0 0"
+          product={tempData.productMap.drawer}
+        />
       </a-entity>
     );
   }

@@ -9,7 +9,7 @@ import ColorPaletteButton from './ColorPaletteButton';
 
 class ProductInfoBubble extends React.Component {
   static propTypes = {
-
+    product: PropTypes.object,
   }
 
   render() {
