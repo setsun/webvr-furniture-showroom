@@ -92,21 +92,11 @@ class CartCarousel extends React.Component {
   renderProducts() {
     const products = this.props.products.map((product) => {
         const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
-        // console.log("model is ", model)
-        return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        return <a-gltf-model src={product.modelId} rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
       })
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
         {products}
-        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#sofa" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#office-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-gltf-model src="#yellow-chair" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
       </a-entity>
     );
   }
