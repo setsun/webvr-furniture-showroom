@@ -14,8 +14,8 @@ class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartCarouselOpen: false,
-      categoriesCarouselOpen: false,
+      cartCarouselOpen: true,
+      categoriesCarouselOpen: true,
     }
   }
 
@@ -23,13 +23,15 @@ class IndexContainer extends React.Component {
     // Test redux actions here
   }
 
-  renderAssets() {
+  provideAssets() {
     return (
       <a-assets>
         <a-asset-item id="icon-change-color" src="/assets/images/icon-change-color.png"></a-asset-item>
         <a-asset-item id="icon-add-to-cart" src="/assets/images/icon-add-to-cart.png"></a-asset-item>
-        <a-asset-item id="tree-obj" src="/assets/models/table_1/Jet_table.obj"></a-asset-item>
-        <a-asset-item id="tree-mtl" src="/assets/models/table_1/Jet_table.mtl"></a-asset-item>
+        <a-asset-item id="table-1-obj" src="/assets/models/table_1/Jet_table.obj"></a-asset-item>
+        <a-asset-item id="table-1-mtl" src="/assets/models/table_1/Jet_table.mtl"></a-asset-item>
+        <a-asset-item id="drawer-obj" src="/assets/models/drawer/drawer.obj"></a-asset-item>
+        <a-asset-item id="drawer-mtl" src="/assets/models/drawer/drawer.mtl"></a-asset-item>
       </a-assets>
     );
   }
@@ -63,7 +65,7 @@ class IndexContainer extends React.Component {
           <a-cursor></a-cursor>
         </a-camera>
         <a-sky color="#6EBAA7"></a-sky>
-        {this.renderAssets()}
+        {this.provideAssets()}
         {this.renderController()}
         {this.renderRoom()}
         {this.renderCartCarousel()}

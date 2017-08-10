@@ -26,16 +26,16 @@ class CategoriesCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.5 0.5 0.5"/>
       </a-entity>
     );
   }
