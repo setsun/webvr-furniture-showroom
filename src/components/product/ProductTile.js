@@ -9,11 +9,13 @@ import ProductInfoBubble from './ProductInfoBubble';
 class ProductTile extends React.Component {
   static propTypes = {
     position: PropTypes.string,
+    waypointPosition: PropTypes.string,
     product: PropTypes.object,
   }
 
   static defaultProps = {
-    position: "0 0.75 -2"
+    position: "0 0 0",
+    waypointPosition: "0.125 0.75 0.25"
   }
 
   constructor(props) {
@@ -58,7 +60,9 @@ class ProductTile extends React.Component {
 
   render() {
     const {
-      position
+      position,
+      waypointPosition,
+      product
     } = this.props;
     const {
       infoOpen
@@ -66,14 +70,17 @@ class ProductTile extends React.Component {
 
     return (
       <a-entity position={position}>
-        <a-entity position="0.125 0.75 0">
+        <a-entity position={waypointPosition}>
           {this.renderWaypointButton()}
           <a-entity position="0 0 0.01">
-            {infoOpen && <ProductInfoBubble />}
+            {infoOpen && <ProductInfoBubble product={product} />}
           </a-entity>
         </a-entity>
         <a-entity
-          obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl"
+          obj-model={`
+            obj: ${product.modelId};
+            mtl: ${product.textureId};
+          `}
           scale="0.5 0.5 0.5"
         />
       </a-entity>
