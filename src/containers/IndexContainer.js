@@ -141,14 +141,14 @@ class IndexContainer extends React.Component {
     ) {
       return null;
     }
-    const currentCat = this.props.userState.currentCategory
-    const products = this.props.userState.categories.currentCat.products
-    const productTiles = products.map((product, index)=>{
-      return <productTile
-        position={(-2+index)+" 0 0"}
-        product={product.currentVariant}
-      />
-      })
+    // const currentCat = this.props.userState.currentCategory
+    // const products = this.props.userState.categories.currentCat.products
+    // const productTiles = products.map((product, index)=>{
+    //   return <productTile
+    //     position={(-2+index)+" 0 0"}
+    //     product={product.currentVariant}
+    //   />
+    //   })
     return (
       <a-entity position="0 0.75 -2">
         <ProductTile
@@ -163,7 +163,7 @@ class IndexContainer extends React.Component {
           position="1 0 0"
           product={tempData.productMap.drawer}
         />
-        {productTiles}
+        {/* {productTiles} */}
       </a-entity>
     );
   }

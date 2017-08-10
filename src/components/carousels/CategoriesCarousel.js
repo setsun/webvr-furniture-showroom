@@ -92,24 +92,24 @@ class CategoriesCarousel extends React.Component {
   }
 
   renderProducts() {
-    const products = this.props.categories.map((category) => {
-      const model = "obj: "+category.modelId+"; mtl:"+ category.textureId;
-      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick(category.modelId)}/>
+    const products = this.props.product.map((product) => {
+      const model = "obj: "+product.currentVarient.modelId+"; mtl:"+ product.currentVarient.textureId;
+      return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25"/>
     });
 
     return (
       
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
-        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25"/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
+        <a-entity obj-model="obj: #drawer-obj; mtl: #drawer-mtl" rotation="90 0 0" scale="0.25 0.25 0.25" onClick={()=>this.props.onCategoryClick("#drawer-obj")}/>
         {products}
       </a-entity>
     );
