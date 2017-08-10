@@ -27,9 +27,6 @@ class IndexContainer extends React.Component {
   provideAssets() {
     return (
       <a-assets>
-        <img id="icon-change-color" src="assets/images/icon-change-color.png"></img>
-        <img id="icon-add-to-cart" src="assets/images/icon-add-to-cart.png"></img>
-        <img id="icon-expand" src="assets/images/icon-expand.png"></img>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
@@ -52,7 +49,24 @@ class IndexContainer extends React.Component {
   renderRoom() {
     return (
       <a-entity>
-        <ProductTile />
+        <a-entity
+          position="-1 0 0">
+          <ProductTile
+
+          />
+        </a-entity>
+        <a-entity
+          position="0 0 0">
+          <ProductTile
+
+          />
+        </a-entity>
+        <a-entity
+          position="1 0 0">
+          <ProductTile
+
+          />
+        </a-entity>
       </a-entity>
     );
   }

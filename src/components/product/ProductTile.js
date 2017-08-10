@@ -66,11 +66,11 @@ class ProductTile extends React.Component {
 
     return (
       <a-entity position={position}>
-        <a-entity position="0 0.75 0">
+        <a-entity position="0.125 0.75 0">
           {this.renderWaypointButton()}
-        </a-entity>
-        <a-entity position="0 0.75 0.01">
-          {infoOpen && <ProductInfoBubble />}
+          <a-entity position="0 0 0.01">
+            {infoOpen && <ProductInfoBubble />}
+          </a-entity>
         </a-entity>
         <a-entity
           obj-model="obj: #sq-table-obj; mtl: #sq-table-mtl"
