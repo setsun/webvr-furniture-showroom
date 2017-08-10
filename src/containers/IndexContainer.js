@@ -7,6 +7,7 @@ import ProductTile from '../components/product/ProductTile';
 import ProductDescriptionPage from '../components/product/ProductDescriptionPage';
 import CartCarousel from '../components/carousels/CartCarousel';
 import CategoriesCarousel from '../components/carousels/CategoriesCarousel';
+import LoadingScreen from '../components/LoadingScreen';
 
 import {onTextureChange} from '../data/userState';
 
@@ -61,6 +62,7 @@ class IndexContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loadingScreenOpen: false,
       cartCarouselOpen: false,
       categoriesCarouselOpen: false,
       productDescriptionPageOpen: false,
@@ -74,7 +76,7 @@ class IndexContainer extends React.Component {
 
   provideAssets() {
     return (
-      <a-assets>
+      <a-assets timeout="0">
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
@@ -113,16 +115,20 @@ class IndexContainer extends React.Component {
     );
   }
 
+  renderLoadingScreen() {
+    return this.state.loadingScreenOpen && <LoadingScreen />;
+  }
+
   renderCartCarousel() {
-    return this.state.cartCarouselOpen && <CartCarousel />
+    return this.state.cartCarouselOpen && <CartCarousel />;
   }
 
   renderCategoriesCarousel() {
-    return this.state.categoriesCarouselOpen && <CategoriesCarousel />
+    return this.state.categoriesCarouselOpen && <CategoriesCarousel />;
   }
 
   renderProductDescriptionPage() {
-    return this.state.productDescriptionPageOpen && <ProductDescriptionPage />
+    return this.state.productDescriptionPageOpen && <ProductDescriptionPage />;
   }
 
   render () {
