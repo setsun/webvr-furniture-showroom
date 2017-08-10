@@ -5,27 +5,27 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 4122,
+      "count": 14493,
       "type": "SCALAR",
       "min": [
         0
       ],
       "max": [
-        6786
+        7617
       ]
     },
     "accessor_index_1": {
       "bufferView": "bufferView_1",
-      "byteOffset": 8244,
+      "byteOffset": 28986,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 14493,
+      "count": 4122,
       "type": "SCALAR",
       "min": [
-        502
+        392
       ],
       "max": [
-        7884
+        7853
       ]
     },
     "accessor_index_2": {
@@ -36,10 +36,10 @@
       "count": 3897,
       "type": "SCALAR",
       "min": [
-        2822
+        2652
       ],
       "max": [
-        3908
+        3738
       ]
     },
     "accessor_position": {
@@ -47,25 +47,25 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5126,
-      "count": 7532,
+      "count": 7496,
       "min": [
-        -0.40599000453948975,
-        0.07769999653100967,
-        -0.9345620274543762
+        -0.8044610023498535,
+        -0.010300000198185444,
+        -0.440324991941452
       ],
       "max": [
-        0.12440499663352966,
-        0.8340970277786255,
-        -0.41457000374794006
+        0.540090024471283,
+        1.9071669578552246,
+        0.8778539896011353
       ],
       "type": "VEC3"
     },
     "accessor_normal": {
       "bufferView": "bufferView_0",
-      "byteOffset": 90384,
+      "byteOffset": 89952,
       "byteStride": 0,
       "componentType": 5126,
-      "count": 7532,
+      "count": 7496,
       "type": "VEC3",
       "min": [
         -1,
@@ -91,21 +91,21 @@
   "buffers": {
     "buffer_0": {
       "type": "arraybuffer",
-      "byteLength": 225792,
+      "byteLength": 224928,
       "uri": "buffer_0.bin"
     }
   },
   "bufferViews": {
     "bufferView_0": {
       "buffer": "buffer_0",
-      "byteLength": 180768,
+      "byteLength": 179904,
       "byteOffset": 0,
       "target": 34962
     },
     "bufferView_1": {
       "buffer": "buffer_0",
       "byteLength": 45024,
-      "byteOffset": 180768,
+      "byteOffset": 179904,
       "target": 34963
     }
   },
@@ -221,7 +221,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_0",
-          "material": "material_Default",
+          "material": "material_MTL1",
           "mode": 4
         },
         {
@@ -230,7 +230,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_1",
-          "material": "material_MTL1",
+          "material": "material_Default",
           "mode": 4
         },
         {

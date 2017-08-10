@@ -5,38 +5,38 @@
       "byteOffset": 0,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 93012,
+      "count": 31380,
       "type": "SCALAR",
       "min": [
         0
       ],
       "max": [
-        17517
+        9518
       ]
     },
     "accessor_index_1": {
       "bufferView": "bufferView_1",
-      "byteOffset": 186024,
+      "byteOffset": 62760,
       "byteStride": 0,
       "componentType": 5123,
       "count": 10176,
       "type": "SCALAR",
       "min": [
-        17518
+        9519
       ],
       "max": [
-        20133
+        12134
       ]
     },
     "accessor_index_2": {
       "bufferView": "bufferView_1",
-      "byteOffset": 206376,
+      "byteOffset": 83112,
       "byteStride": 0,
       "componentType": 5123,
-      "count": 31380,
+      "count": 93012,
       "type": "SCALAR",
       "min": [
-        20134
+        12135
       ],
       "max": [
         29652
@@ -49,14 +49,14 @@
       "componentType": 5126,
       "count": 27062,
       "min": [
-        -0.7476860284805298,
-        -0.0008140000281855464,
-        -0.44482699036598206
+        -2.077399969100952,
+        -0.0020800000056624413,
+        -1.1369400024414062
       ],
       "max": [
-        0.7404860258102417,
-        0.778439998626709,
-        0.4802500009536743
+        2.070199966430664,
+        1.9896249771118164,
+        1.22747802734375
       ],
       "type": "VEC3"
     },
@@ -218,7 +218,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_0",
-          "material": "material_Body",
+          "material": "material_Metal",
           "mode": 4
         },
         {
@@ -236,7 +236,7 @@
             "NORMAL": "accessor_normal"
           },
           "indices": "accessor_index_2",
-          "material": "material_Metal",
+          "material": "material_Body",
           "mode": 4
         }
       ]
