@@ -3,7 +3,6 @@ import 'aframe-layout-component';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Entity} from 'aframe-react';
 
 class CartCarousel extends React.Component {
   static propTypes = {
@@ -12,11 +11,11 @@ class CartCarousel extends React.Component {
 
   renderRing() {
     return (
-      <Entity>
+      <a-entity>
         <a-ring color="#8200AF" radius-inner="3.95" radius-outer="4.0" material="transparent:true; opacity: 0.5;" />
         <a-ring color="#EEEEEE" radius-inner="2.5" radius-outer="3.95" material="transparent:true; opacity: 0.5;" />
         <a-ring color="#8200AF" radius-inner="2.45" radius-outer="2.5" material="transparent:true; opacity: 0.5;" />
-      </Entity>
+      </a-entity>
     );
   }
 
@@ -39,18 +38,18 @@ class CartCarousel extends React.Component {
 
   render() {
     return (
-      <Entity
+      <a-entity
         position="0 0 0"
         rotation="-90 0 0"
         scale="0 0 0"
-        animation={{
-          property: 'scale',
-          dur: 2000,
-          to: '1 1 1'
-        }}>
+        animation={`
+          property: scale;
+          dur: 2000;
+          to: 1 1 1
+        `}>
         {this.renderRing()}
         {this.renderProducts()}
-      </Entity>
+      </a-entity>
     );
   }
 }
