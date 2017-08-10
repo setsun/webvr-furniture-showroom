@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib jet_table_purple.mtl
+mtllib jet_table_red.mtl
 g default
 v -0.808212 1.191242 -1.394485
 v -0.808212 1.354904 -1.394485
