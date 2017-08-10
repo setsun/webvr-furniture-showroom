@@ -70,15 +70,15 @@ class CartCarousel extends React.Component {
 
   renderButtons() {
     return (
-      <a-entity position="0 2.25 0.25" rotation="90 0 0">
+      <a-entity position="0 2.25 0.25" rotation="75 0 0">
         <a-circle
-          position="1.25 0 0"
+          position="0.75 0 0"
           radius="0.1"
           color="#37474F"
           onClick={() => this.rotateLeft()}
         />
         <a-circle
-          position="-1.25 0 0"
+          position="-0.75 0 0"
           radius="0.1"
           color="#37474F"
           onClick={() => this.rotateRight()}

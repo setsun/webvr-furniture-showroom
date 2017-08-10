@@ -72,7 +72,7 @@ class CategoriesCarousel extends React.Component {
 
   renderButtons() {
     return (
-      <a-entity position="0 2 -0.2" rotation="90 0 0">
+      <a-entity position="0 1.75 -0.2" rotation="90 0 0">
         <a-circle
           position="0.75 0 0"
           radius="0.1"
