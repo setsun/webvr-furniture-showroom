@@ -79,9 +79,11 @@ class ProductColorButton extends React.Component {
     });
   }
 
-  render() {
+  renderBaseButton() {
     return (
-      <Entity>
+      <Entity
+        position={{x: 0, y: 0, z: 0.01}}
+        rotation="-90 0 0">
         <Entity
           geometry={{
             primitive: 'cylinder',
@@ -89,9 +91,15 @@ class ProductColorButton extends React.Component {
             height: 0.01,
           }}
           material={{color: '#37474F'}}
-          position={{x: 0, y: 0, z: 0.01}}
-          rotation="-90 0 0"
         />
+      </Entity>
+    );
+  }
+
+  render() {
+    return (
+      <Entity>
+        {this.renderBaseButton()}
         {this.renderButtons()}
       </Entity>
     );

@@ -26,8 +26,10 @@ class IndexContainer extends React.Component {
   renderAssets() {
     return (
       <a-assets>
-        <a-asset-item id="tree-obj" src="/assets/table_1/Jet_table.obj"></a-asset-item>
-        <a-asset-item id="tree-mtl" src="/assets/table_1/Jet_table.mtl"></a-asset-item>
+        <a-asset-item id="icon-change-color" src="/assets/images/icon-change-color.png"></a-asset-item>
+        <a-asset-item id="icon-add-to-cart" src="/assets/images/icon-add-to-cart.png"></a-asset-item>
+        <a-asset-item id="tree-obj" src="/assets/models/table_1/Jet_table.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="/assets/models/table_1/Jet_table.mtl"></a-asset-item>
       </a-assets>
     );
   }
