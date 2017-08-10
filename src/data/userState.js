@@ -10,7 +10,78 @@ const initialState = {
   currentCategory: "Chair",
   cartCarouselOpen: false,
   categoriesCarouselOpen: false,
-  cart:[]
+  cart:[
+    {
+      name: 'Plain Table',
+      price: 123.54,
+      modelId: '#sofa',
+      textureId: null,
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    {
+      name: 'Plain Table',
+      price: 123.54,
+      modelId: '#sofa',
+      textureId: null,
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    {
+      name: 'Plain Table',
+      price: 123.54,
+      modelId: '#sofa',
+      textureId: null,
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    {
+      name: 'Plain Table',
+      price: 123.54,
+      modelId: '#sofa',
+      textureId: null,
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    },
+    {
+      name: 'Some Drawer',
+      price: 423.45,
+      modelId: '#drawer-obj',
+      textureId: '#drawer-mtl',
+      colors: [
+        '#4CC3D9',
+        '#EF2D5E',
+        '#FFC65D',
+        '#8200AF',
+        '#999999',
+        '#FCF838'
+      ]
+    }
+  ]
 };
 
 export const ActionTypes = {
