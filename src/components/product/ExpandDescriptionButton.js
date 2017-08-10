@@ -6,6 +6,15 @@ import PropTypes from 'prop-types';
 class ExpandDescriptionButton extends React.Component {
   static propTypes = {
     onExpandDescription: PropTypes.func.isRequired,
+    expanded: PropTypes.bool,
+  }
+
+  getImageSrc() {
+    const {
+      expanded
+    } = this.props;
+
+    return `#icon-${expanded ? 'collapse' : 'expand'}-circle`;
   }
 
   render() {
@@ -16,7 +25,7 @@ class ExpandDescriptionButton extends React.Component {
     return (
       <a-entity onClick={() => onExpandDescription()}>
         <a-image
-          src="#icon-collapse-circle"
+          src={this.getImageSrc()}
           height="0.2"
           width="0.2"
         />

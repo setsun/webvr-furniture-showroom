@@ -80,6 +80,21 @@ class IndexContainer extends React.Component {
         <img id="icon-cart-circle" src="assets/images/icon-cart-circle.png"></img>
         <img id="icon-color-circle" src="assets/images/icon-color-circle.png"></img>
         <img id="icon-collapse-circle" src="assets/images/icon-collapse-circle.png"></img>
+        <img id="icon-expand-circle" src="assets/images/icon-expand-circle.png"></img>
+        <img id="icon-left-circle" src="assets/images/icon-left-circle.png"></img>
+        <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
+        <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
+
+        <a-asset-item id="jet-table-glassy-obj" src="assets/models/jet_table/jet_table_glassy.obj"></a-asset-item>
+        <a-asset-item id="jet-table-glassy-mtl" src="assets/models/jet_table/jet_table_glassy.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-brown-obj" src="assets/models/jet_table/jet_table_light_brown.obj"></a-asset-item>
+        <a-asset-item id="jet-table-brown-mtl" src="assets/models/jet_table/jet_table_light_brown.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-purple-obj" src="assets/models/jet_table/jet_table_purple.obj"></a-asset-item>
+        <a-asset-item id="jet-table-purple-mtl" src="assets/models/jet_table/jet_table_purple.mtl"></a-asset-item>
+        <a-asset-item id="jet-table-wood-obj" src="assets/models/jet_table/jet_table_wood.obj"></a-asset-item>
+        <a-asset-item id="jet-table-wood-mtl" src="assets/models/jet_table/jet_table_wood.mtl"></a-asset-item>
+
+        <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
         <a-asset-item id="table-1-obj" src="assets/models/table_1/Jet_table.obj"></a-asset-item>
         <a-asset-item id="table-1-mtl" src="assets/models/table_1/Jet_table.mtl"></a-asset-item>
         <a-asset-item id="sq-table-obj" src="assets/models/square_table/square_table.obj"></a-asset-item>
@@ -146,16 +161,14 @@ class IndexContainer extends React.Component {
 
   renderLogo() {
     return (
-      <a-entity position="2 4 -6">
-        <a-image
-          src="#icon-jet-circle"
-        />
-        <a-entity
-          text="value: VR;"
-          scale="15 15 15"
-          position="8 0 0"
-        />
-      </a-entity>
+      <a-curvedimage
+        src="#logo-jet-vr"
+        height="1"
+        radius="5.7"
+        theta-length="36"
+        rotation="0 145 0"
+        position="0 4.5 0"
+      />
     );
   }
 
