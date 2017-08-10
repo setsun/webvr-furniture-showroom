@@ -69,6 +69,7 @@ class IndexContainer extends React.Component {
 
   componentDidMount() {
     // Test redux actions here
+    this.props.onTextureChange();
   }
 
   provideAssets() {
@@ -143,9 +144,9 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonClick: onTextureChange
+    onTextureChange: (textureId) => dispatch(onTextureChange(textureId))
   };
 };
 
