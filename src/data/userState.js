@@ -1,21 +1,9 @@
-/*
-price = {
-  value: 12.35,
-  textureId: 'wood'
-}
-texture = {
-  id: 'wood',
-  path: '/assets/table_1/Jet_table.mtl'
-}
-currentTextureId = 'wood';
-*/
+import productData from './product.json'
+var productsList = JSON.parse(productData);
 
 const initialState = {
-  products:[
-    {name:'table', current:'wood', textures:['wood','steel','fabric'], prices: [{texture:'wood', price: 12.34}, {texture:'steel', price: 12.34}, {texture:'fabric', price: 12.34}]},
-    {base:'chair', current:'wood', textures:['wood','steel','fabric'], prices: [{texture:'wood', price: 12.34}, {texture:'steel', price: 12.34}, {texture:'fabric', price: 12.34}]},
-  ],
-  currentProductId: 0,
+  products: productsList,
+  currentSelectedProductId: 0,
   cart:[]
 };
 
