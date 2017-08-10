@@ -107,7 +107,10 @@ class ProductTile extends React.Component {
             {infoOpen && (
               <ProductInfoBubble
                 product={product}
-                onAddToCart={onAddToCart}
+                onAddToCart={()=>{
+                  this.toggleInfoOpen();
+                  this.props.onAddToCart();
+                  }}
                 onVariantChange={onVariantChange}
                 onCategorySelect={onCategorySelect}
               />

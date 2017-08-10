@@ -94,9 +94,9 @@ class CartCarousel extends React.Component {
     const products = this.props.products.map((product) => {
         if(product.textureId){
           const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
-          return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25"/>
+          return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={this.props.onClick}/>
         }
-        return <a-gltf-model src={product.modelId} rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
+        return <a-gltf-model src={product.modelId} rotation="90 0 0" scale="0.25 0.25 0.25" onClick={this.props.onClick} ></a-gltf-model>
       })
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
