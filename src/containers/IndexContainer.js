@@ -149,22 +149,22 @@ class IndexContainer extends React.Component {
         <ProductTile
           position="-1 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table1.id)}
-          onCategorySelect={onCategoryClick}
+          onAddToCart={() => addToCart(tempData.productMap.table1)}
+          onCategorySelect={()=>onCategoryClick('Chair')}
           product={tempData.productMap.table1}
         />
         <ProductTile
           position="0 0 0"
           onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.table2.id)}
-          onCategorySelect={onCategoryClick}
+          onAddToCart={() => addToCart(tempData.productMap.table2)}
+          onCategorySelect={ () => onCategoryClick('FancyTable')}
           product={tempData.productMap.table2}
         />
         <ProductTile
           position="1 0 0"
-          onVariantChange={onTextureChange}
-          onAddToCart={() => addToCart(tempData.productMap.drawer.id)}
-          onCategorySelect={onCategoryClick}
+          onVariantChange={(variant)=> onTextureChange}
+          onAddToCart={() => addToCart(tempData.productMap.drawer)}
+          onCategorySelect={() => onCategoryClick('Chair')}
           product={tempData.productMap.drawer}
         />
       </a-entity>
@@ -185,13 +185,15 @@ class IndexContainer extends React.Component {
   }
 
   renderCartCarousel() {
-    return this.props.userState.cartCarouselOpen && <CartCarousel />;
+    return this.props.userState.cartCarouselOpen && <CartCarousel products={this.props.userState.cart}/>;
   }
 
   renderCategoriesCarousel() {
     const cat = this.props.userState.currentCategory
     console.log('what is cat', cat);
-    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel onProductClick={this.props.onProductClicked}/>;
+    
+    const products = this.props.userState.categories[cat].products
+    return this.props.userState.categoriesCarouselOpen && <CategoriesCarousel products={products} onProductClick={this.props.onProductClicked}/>;
   }
 
   render () {
@@ -215,7 +217,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onTextureChange: (textureId) => dispatch(onTextureChange(textureId)),
     onProductClicked: (productId) => dispatch(onProductClick(productId)),
-    onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId))
+    onCategoryClick: (categoryId) => dispatch(onCategoryClick(categoryId)),
+    addToCart: (product) => dispatch(addToCart(product))
   };
 };
 
