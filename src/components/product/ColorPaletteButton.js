@@ -5,9 +5,7 @@ import PropTypes from 'prop-types';
 
 class ColorPaletteButton extends React.Component {
   static propTypes = {
-    colors: PropTypes.array.isRequired,
-    currentColor: PropTypes.string,
-    sku: PropTypes.string,
+    product: PropTypes.object,
     onColorChange: PropTypes.func,
   }
 
@@ -60,11 +58,14 @@ class ColorPaletteButton extends React.Component {
   }
 
   renderButtons() {
-    const {colors} = this.props;
-    const slice = (2 * Math.PI) / (colors.length - 1);
+    const {product: {variants}} = this.props;
+    const slice = (2 * Math.PI) / (variants.length - 1);
 
-    return colors.map((color, index) => {
+    return variants.map((variant, index) => {
+      const {modelId, textureId, color} = variant;
       const {x, y} = this.getPosition(0, 0, 0.3, slice * index);
+
+      console.log(color);
 
       return (
         <a-entity

@@ -17,13 +17,27 @@ const tempData = {
       price: 23.56,
       modelId: '#jet-table-brown-obj',
       textureId: '#jet-table-brown-mtl',
-      colors: [
-        '#4CC3D9',
-        '#EF2D5E',
-        '#FFC65D',
-        '#8200AF',
-        '#999999',
-        '#FCF838'
+      variants: [
+        {
+          modelId: '#jet-table-brown-obj',
+          textureId: '#jet-table-brown-mtl',
+          color: '#8B4513'
+        },
+        {
+          modelId: '#jet-table-purple-obj',
+          textureId: '#jet-table-purple-mtl',
+          color: '#8200FF'
+        },
+        {
+          modelId: '#jet-table-red-mtl',
+          textureId: '#jet-table-red-mtl',
+          color: '#EF2D5E'
+        },
+        {
+          modelId: '#jet-table-yellow-mtl',
+          textureId: '#jet-table-yellow-mtl',
+          color: '#FCF838'
+        },
       ]
     },
     table2: {
