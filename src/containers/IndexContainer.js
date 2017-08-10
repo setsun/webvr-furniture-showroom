@@ -119,6 +119,21 @@ class IndexContainer extends React.Component {
     return this.state.loadingScreenOpen && <LoadingScreen />;
   }
 
+  renderLoadedScene() {
+    if (this.state.loadingScreenOpen) {
+      return null;
+    }
+
+    return (
+      <a-entity>
+        {this.renderRoom()}
+        {this.renderCartCarousel()}
+        {this.renderCategoriesCarousel()}
+        {this.renderProductDescriptionPage()}
+      </a-entity>
+    );
+  }
+
   renderCartCarousel() {
     return this.state.cartCarouselOpen && <CartCarousel />;
   }
@@ -137,10 +152,8 @@ class IndexContainer extends React.Component {
         <a-sky color="#6EBAA7"></a-sky>
         {this.provideAssets()}
         {this.renderCamera()}
-        {this.renderRoom()}
-        {this.renderCartCarousel()}
-        {this.renderCategoriesCarousel()}
-        {this.renderProductDescriptionPage()}
+        {this.renderLoadingScreen()}
+        {this.renderLoadedScene()}
       </a-scene>
     );
   }
