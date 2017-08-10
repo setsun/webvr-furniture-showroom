@@ -23,6 +23,14 @@ class CategoriesCarousel extends React.Component {
     );
   }
 
+  renderButtons() {
+    return (
+      <Entity>
+
+      </Entity>
+    );
+  }
+
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
@@ -49,9 +57,9 @@ class CategoriesCarousel extends React.Component {
           property: 'position',
           dur: 1500,
           to: '0 1.5 0'
-        }}
-        >
+        }}>
         {this.renderRing()}
+        {this.renderButtons()}
         {this.renderProducts()}
       </Entity>
     );
