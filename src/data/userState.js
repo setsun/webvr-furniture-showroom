@@ -1,31 +1,17 @@
 import productData from './product.js';
 
 // var productsList = JSON.parse(productData);
-console.log("product list is ", productData);
+// console.log("product list is ", productData);
 // const catagoryList = [];
 
 const initialState = {
   categories: productData,
   currentProduct: 0,
   currentCategory: "Chair",
-  cartCarouselOpen: true,
+  cartCarouselOpen: false,
   categoriesCarouselOpen: false,
   cart:[]
 };
-// {
-//       name: 'Fancy Drawer',
-//       price: 423.45,
-//       modelId: '#drawer-obj',
-//       textureId: '#drawer-mtl',
-//       colors: [
-//         '#4CC3D9',
-//         '#EF2D5E',
-//         '#FFC65D',
-//         '#8200AF',
-//         '#999999',
-//         '#FCF838'
-//       ]
-//     }
 
 export const ActionTypes = {
   TEXTURE_CHANGE: 'TEXTURE_CHANGE',
@@ -49,9 +35,9 @@ export const onCategoryClick = id => ({
   payload: id,
 });
 
-export const addToCart = id => ({
+export const addToCart = payload => ({
   type: ActionTypes.ADD_TO_CART,
-  payload: id,
+  payload,
 });
 
 export default (state = initialState, action) => {
