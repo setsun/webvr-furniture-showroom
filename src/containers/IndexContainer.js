@@ -123,7 +123,12 @@ class IndexContainer extends React.Component {
   renderCamera() {
     return (
       <a-camera>
-        <a-cursor></a-cursor>
+        <a-entity
+          cursor="fuse: false;"
+          position="0 0 -1"
+          geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.025"
+          material="color: #8200FF; shader: flat"
+        />
         <a-entity daydream-controls="hand: right"></a-entity>
       </a-camera>
     );
@@ -179,7 +184,7 @@ class IndexContainer extends React.Component {
         <a-entity
           position="0.25 0 0">
           <ProductTile
-            waypointPosition="0.125 1 0.5"
+            waypointPosition="-0.2 1 0.5"
             onVariantChange={onTextureChange}
             onAddToCart={onAddToCart}
             onCategorySelect={()=>onCategoryClick('Table')}

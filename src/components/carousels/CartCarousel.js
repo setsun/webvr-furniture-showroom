@@ -66,6 +66,13 @@ class CartCarousel extends React.Component {
     `;
   }
 
+  getPosition(x0, y0, radius, theta) {
+    const x = x0 + (radius * Math.cos(theta));
+    const y = y0 + (radius * Math.sin(theta));
+
+    return {x, y};
+  }
+
   renderRing() {
     return (
       <a-entity>
@@ -105,16 +112,37 @@ class CartCarousel extends React.Component {
   }
 
   renderProducts() {
+    const slice = (2 * Math.PI) / (this.props.products.length - 1);
 
-    const products = this.props.products.map((product) => {
-        if(product.textureId){
-          const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
-          return <a-entity obj-model={model} rotation="90 0 0" scale="0.25 0.25 0.25" />
-        }
-        return <a-gltf-model src={product.modelId} rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-      })
+    const products = this.props.products.map((product, index) => {
+      const {x, y} = this.getPosition(0, 0, 3.25, slice * index);
+
+      if(product.textureId){
+        const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
+        return (
+          <a-entity
+            key={`${product.modelId}-${index}`}
+            obj-model={model}
+            rotation="90 0 0"
+            position={`${x} ${y} 0`}
+            scale="0.25 0.25 0.25"
+          />
+        )
+      }
+
+      return (
+        <a-gltf-model
+          key={`${product.modelId}-${index}`}
+          src={product.modelId}
+          rotation="90 0 0"
+          position={`${x} ${y} 0`}
+          scale="0.25 0.25 0.25"
+        />
+      );
+    });
+
     return (
-      <a-entity layout="type: circle; margin: 6; radius: 3.25">
+      <a-entity>
         {products}
       </a-entity>
     );
@@ -128,7 +156,7 @@ class CartCarousel extends React.Component {
         scale="0 0 0"
         animation={`
           property: scale;
-          dur: 2000;
+          dur: 1500;
           to: 1 1 1
         `}
         animation__exit={this.exitAnimation()}>
