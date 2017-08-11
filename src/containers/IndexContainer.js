@@ -41,9 +41,9 @@ const tempData = {
       ]
     },
     table2: {
-      name: 'King Sofa',
+      name: 'Office Chair',
       price: 123.54,
-      modelId: '#sofa',
+      modelId: '#office-chair',
       textureId: null,
       colors: [
         '#4CC3D9',
@@ -112,7 +112,6 @@ class IndexContainer extends React.Component {
         <a-asset-item id="drawer-mtl" src="assets/models/drawer/drawer.mtl"></a-asset-item>
 
         <a-asset-item id="wooden-table" src="assets/models/wooden_table/wooden-coffe-table.gltf"></a-asset-item>
-        <a-asset-item id="sofa" src="assets/models/sofa/modern-convertible-sofa-with-pullout-bed.gltf"></a-asset-item>
         <a-asset-item id="table-2" src="assets/models/table_2/attach-demo-table.gltf"></a-asset-item>
         <a-asset-item id="office-chair" src="assets/models/office_chair/office-chair.gltf"></a-asset-item>
         <a-asset-item id="yellow-chair" src="assets/models/yellow_chair/chair.gltf"></a-asset-item>
@@ -175,7 +174,7 @@ class IndexContainer extends React.Component {
         />
         <a-entity
           rotation="0 15 0"
-          position="-1.75 -0.0175 0">
+          position="-1.5 -0.0175 0">
           <ProductTile
             waypointPosition="0.125 1.25 0.25"
             onAddToCart={onAddToCart}
