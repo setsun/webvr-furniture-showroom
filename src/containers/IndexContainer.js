@@ -89,12 +89,12 @@ class IndexContainer extends React.Component {
 
   provideAssets() {
     return (
-      <a-assets timeout="0">
-        <img id="icon-jet-circle" src="assets/images/icon-jet-circle.png"></img>
+      <a-assets>
         <img id="icon-cart-circle" src="assets/images/icon-cart-circle.png"></img>
         <img id="icon-color-circle" src="assets/images/icon-color-circle.png"></img>
         <img id="icon-collapse-circle" src="assets/images/icon-collapse-circle.png"></img>
         <img id="icon-expand-circle" src="assets/images/icon-expand-circle.png"></img>
+        <img id="icon-close-circle" src="assets/images/icon-close-circle.png"></img>
         <img id="icon-left-circle" src="assets/images/icon-left-circle.png"></img>
         <img id="icon-right-circle" src="assets/images/icon-right-circle.png"></img>
         <img id="logo-jet-vr" src="assets/images/logo-jet-vr.png"></img>
@@ -157,7 +157,7 @@ class IndexContainer extends React.Component {
 
     return (
       <a-entity
-        position="0 0 -8"
+        position="-0.65 -0.15 -8"
         rotation="10 0 0"
         scale="2 2 2">
         <a-plane

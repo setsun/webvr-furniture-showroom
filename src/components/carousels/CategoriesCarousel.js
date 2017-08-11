@@ -18,6 +18,14 @@ class CategoriesCarousel extends React.Component {
     }
   }
 
+  handleClose() {
+    this.setState({willExit: true});
+
+    setTimeout(() => {
+      this.props.onProductClick(false);
+    }, 1500);
+  }
+
   rotateLeft() {
     const currentDegrees = this.state.rotationDegrees || 0;
 
@@ -50,12 +58,12 @@ class CategoriesCarousel extends React.Component {
     }
 
     return `
-      property: position;
+      property: scale;
       dur: 1500;
-      to: 0 0 0
+      easing: easeOutSine;
+      to: 0 0 0;
     `;
   }
-
 
   renderRing() {
     return (
@@ -81,6 +89,13 @@ class CategoriesCarousel extends React.Component {
           onClick={() => this.rotateLeft()}
         />
         <a-image
+          src="#icon-close-circle"
+          position="0 0 0"
+          height="0.2"
+          width="0.2"
+          onClick={() => this.handleClose()}
+        />
+        <a-image
           src="#icon-right-circle"
           position="0.75 0 0"
           height="0.2"
@@ -94,14 +109,14 @@ class CategoriesCarousel extends React.Component {
   renderProducts() {
     return (
       <a-entity layout="type: circle; margin: 6; radius: 3.25">
-        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' onClick={()=>{this.props.onProductClick(false)}}/>
-        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' onClick={()=>{this.props.onProductClick(false)}}/>
-        <a-entity obj-model="obj: #jet-table-red-obj; mtl: #jet-table-red-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' />
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' />
+        <a-entity obj-model="obj: #jet-table-red-obj; mtl: #jet-table-red-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' />
         <a-gltf-model src="#wooden-table" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-entity obj-model="obj: #jet-table-yellow-obj; mtl: #jet-table-yellow-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-entity obj-model="obj: #jet-table-yellow-obj; mtl: #jet-table-yellow-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 -1' />
         <a-gltf-model src="#table-2" rotation="90 0 0" scale="0.25 0.25 0.25"></a-gltf-model>
-        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' onClick={()=>{this.props.onProductClick(false)}}/>
-        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' onClick={()=>{this.props.onProductClick(false)}}/>
+        <a-entity obj-model="obj: #jet-table-brown-obj; mtl: #jet-table-brown-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='0 0 10' />
+        <a-entity obj-model="obj: #jet-table-purple-obj; mtl: #jet-table-purple-mtl;" rotation="90 0 0" scale="0.25 0.25 0.25" position='-1 0 0' />
       </a-entity>
 
     );
@@ -110,9 +125,14 @@ class CategoriesCarousel extends React.Component {
   render() {
     return (
       <a-entity
-        position="0 2.5 0"
+        position="0 1.5 0"
         rotation="-90 0 0"
-        animation="property: position; dur: 1500; to: 0 1.5 0"
+        scale="0 0 0"
+        animation={`
+          property: scale;
+          dur: 2000;
+          to: 1 1 1
+        `}
         animation__exit={this.exitAnimation()}>
         <a-entity>
           {this.rotateAnimation()}
