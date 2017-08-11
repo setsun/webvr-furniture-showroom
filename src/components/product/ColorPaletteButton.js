@@ -65,11 +65,9 @@ class ColorPaletteButton extends React.Component {
       const {modelId, textureId, color} = variant;
       const {x, y} = this.getPosition(0, 0, 0.3, slice * index);
 
-      console.log(color);
-
       return (
         <a-entity
-          key={`${color}-${index}`}
+          key={`${modelId}-${index}`}
           position="0 0 0"
           animation={`
             property: position;

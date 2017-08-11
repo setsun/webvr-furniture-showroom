@@ -137,7 +137,9 @@ class CategoriesCarousel extends React.Component {
         <a-entity>
           {this.rotateAnimation()}
           {this.renderRing()}
-          {this.renderProducts()}
+          <a-entity position="0 0 -0.25">
+            {this.renderProducts()}
+          </a-entity>
         </a-entity>
         {this.renderButtons()}
       </a-entity>
