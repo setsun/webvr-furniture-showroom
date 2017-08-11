@@ -168,10 +168,11 @@ class IndexContainer extends React.Component {
           width="5.5"
         />
         <a-entity
+          rotation="0 15 0"
           position="-1.75 -0.0175 0">
           <ProductTile
-            waypointPosition="0.125 1.125 0.25"
-            onAddToCart={() => onAddToCart(tempData.productMap.table2)}
+            waypointPosition="0.125 1.25 0.25"
+            onAddToCart={onAddToCart}
             product={tempData.productMap.table2}
           />
         </a-entity>
@@ -180,16 +181,17 @@ class IndexContainer extends React.Component {
           <ProductTile
             waypointPosition="0.125 1 0.5"
             onVariantChange={onTextureChange}
-            onAddToCart={() => onAddToCart(tempData.productMap.table1)}
+            onAddToCart={onAddToCart}
             onCategorySelect={()=>onCategoryClick('Table')}
             product={tempData.productMap.table1}
           />
         </a-entity>
         <a-entity
-          position="2 0 0">
+          position="2 0 0"
+          rotation="0 -30 0">
           <ProductTile
             waypointPosition="0.125 0.75 0.5"
-            onAddToCart={() => onAddToCart(tempData.productMap.drawer)}
+            onAddToCart={onAddToCart}
             product={tempData.productMap.drawer}
           />
         </a-entity>

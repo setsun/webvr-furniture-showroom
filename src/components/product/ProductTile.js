@@ -36,6 +36,17 @@ class ProductTile extends React.Component {
     });
   }
 
+  handleAddToCart() {
+    const {product} = this.props;
+    const productObject = {
+      ...product,
+      modelId: this.state.modelId || product.modelId,
+      textureId: this.state.textureId || product.textureId
+    };
+
+    this.props.onAddToCart(productObject);
+  }
+
   handleModelChange(modelId, textureId) {
     this.setState({
       modelId,
@@ -121,7 +132,7 @@ class ProductTile extends React.Component {
                 product={product}
                 onAddToCart={()=>{
                   this.toggleInfoOpen();
-                  this.props.onAddToCart();
+                  this.handleAddToCart();
                 }}
                 onVariantChange={onVariantChange ? (modelId, textureId) => this.handleModelChange(modelId, textureId) : null}
                 onCategorySelect={onCategorySelect}

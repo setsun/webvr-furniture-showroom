@@ -45,8 +45,8 @@ class ProductInfoBubble extends React.Component {
 
     return (
       <a-entity position="-0.15 0.75 0">
-        <a-text position="0 0 0" value={name} color="#000000"/>
-        <a-text position="0 -0.35 0" value={"$" + price} color="#8200FF"/>
+        <a-text font="exo2bold" position="0 -0.1 0" value={name} color="#000000"/>
+        <a-text font="exo2semibold" position="0 -0.35 0" scale="0.75 0.75 0.75" value={"$" + price} color="#8200FF"/>
       </a-entity>
     );
   }
