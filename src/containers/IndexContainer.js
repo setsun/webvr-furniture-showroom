@@ -149,6 +149,7 @@ class IndexContainer extends React.Component {
         {this.renderRoom()}
         {this.renderCartCarousel()}
         {this.renderCategoriesCarousel()}
+        <a-text scale="2 2 2"value="LOL, why you look back here" font="exo2bold" rotation="0 180 0" position="2.5 2 5.5" color="#000000"/>
       </a-entity>
     );
   }
@@ -162,8 +163,8 @@ class IndexContainer extends React.Component {
 
     return (
       <a-entity
-        position="-0.65 -0.15 -8"
-        rotation="10 0 0"
+        position="-0.65 -0.25 -8"
+        rotation="8 0 0"
         scale="2 2 2">
         <a-plane
           rotation="-90 0 0"
