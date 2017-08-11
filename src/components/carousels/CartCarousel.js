@@ -73,6 +73,27 @@ class CartCarousel extends React.Component {
     return {x, y};
   }
 
+  renderLabel() {
+    return (
+      <a-entity position="0 1.55 0.25" rotation="75 0 0">
+        <a-circle
+          position="0.125 0 0"
+          radius="0.125"
+        />
+        <a-plane
+          position="0 0 0"
+          height="0.25"
+          width="0.25"
+        />
+        <a-circle
+          position="-0.125 0 0"
+          radius="0.125"
+        />
+        <a-text font="exo2semibold" position="-0.115 0.025 0" scale="0.525 0.525 0.525" value="Cart" color="#999999"/>
+      </a-entity>
+    );
+  }
+
   renderRing() {
     return (
       <a-entity>
@@ -159,6 +180,7 @@ class CartCarousel extends React.Component {
           {this.renderRing()}
           {this.renderProducts()}
         </a-entity>
+        {this.renderLabel()}
         {this.renderButtons()}
       </a-entity>
     );

@@ -65,6 +65,27 @@ class CategoriesCarousel extends React.Component {
     `;
   }
 
+  renderLabel() {
+    return (
+      <a-entity position="0 1.75 -0.6" rotation="90 0 0">
+        <a-circle
+          position="0.125 0 0"
+          radius="0.125"
+        />
+        <a-plane
+          position="0 0 0"
+          height="0.25"
+          width="0.25"
+        />
+        <a-circle
+          position="-0.125 0 0"
+          radius="0.125"
+        />
+        <a-text font="exo2semibold" position="-0.185 0.02 0" scale="0.52 0.52 0.52" value="Tables" color="#999999"/>
+      </a-entity>
+    );
+  }
+
   renderRing() {
     return (
       <a-cylinder
@@ -80,7 +101,7 @@ class CategoriesCarousel extends React.Component {
 
   renderButtons() {
     return (
-      <a-entity position="0 1.75 -0.2" rotation="90 0 0">
+      <a-entity position="0 1.75 -0.3" rotation="90 0 0">
         <a-image
           src="#icon-left-circle"
           position="-0.75 0 0"
@@ -141,6 +162,7 @@ class CategoriesCarousel extends React.Component {
             {this.renderProducts()}
           </a-entity>
         </a-entity>
+        {this.renderLabel()}
         {this.renderButtons()}
       </a-entity>
     );
