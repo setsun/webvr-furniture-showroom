@@ -14,7 +14,7 @@ class CartCarousel extends React.Component {
 
     this.state = {
       willExit: false,
-      rotationDegrees: 0
+      rotationDegrees: 90
     }
   }
 
@@ -112,11 +112,7 @@ class CartCarousel extends React.Component {
   }
 
   renderProducts() {
-    const slice = (2 * Math.PI) / (this.props.products.length - 1);
-
     const products = this.props.products.map((product, index) => {
-      const {x, y} = this.getPosition(0, 0, 3.25, slice * index);
-
       if(product.textureId){
         const model = "obj: "+product.modelId+"; mtl:"+ product.textureId;
         return (
@@ -124,7 +120,6 @@ class CartCarousel extends React.Component {
             key={`${product.modelId}-${index}`}
             obj-model={model}
             rotation="90 0 0"
-            position={`${x} ${y} 0`}
             scale="0.25 0.25 0.25"
           />
         )
@@ -135,14 +130,13 @@ class CartCarousel extends React.Component {
           key={`${product.modelId}-${index}`}
           src={product.modelId}
           rotation="90 0 0"
-          position={`${x} ${y} 0`}
           scale="0.25 0.25 0.25"
         />
       );
     });
 
     return (
-      <a-entity>
+      <a-entity layout="type: circle; margin: 6; radius: 3.25">
         {products}
       </a-entity>
     );

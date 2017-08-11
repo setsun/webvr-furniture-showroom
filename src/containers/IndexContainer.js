@@ -37,7 +37,7 @@ const tempData = {
           modelId: '#jet-table-yellow-obj',
           textureId: '#jet-table-yellow-mtl',
           color: '#FCF838'
-        },
+        }
       ]
     },
     table2: {
@@ -184,7 +184,7 @@ class IndexContainer extends React.Component {
         <a-entity
           position="0.25 0 0">
           <ProductTile
-            waypointPosition="-0.2 1 0.5"
+            waypointPosition="-0.35 1 0.5"
             onVariantChange={onTextureChange}
             onAddToCart={onAddToCart}
             onCategorySelect={()=>onCategoryClick('Table')}
