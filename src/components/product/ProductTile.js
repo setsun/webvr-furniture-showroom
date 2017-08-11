@@ -135,7 +135,10 @@ class ProductTile extends React.Component {
                   this.handleAddToCart();
                 }}
                 onVariantChange={onVariantChange ? (modelId, textureId) => this.handleModelChange(modelId, textureId) : null}
-                onCategorySelect={onCategorySelect}
+                onCategorySelect={() => {
+                  this.toggleInfoOpen();
+                  onCategorySelect();
+                }}
               />
             )}
           </a-entity>
