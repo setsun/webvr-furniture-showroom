@@ -1,5 +1,5 @@
 {
-  "name": "vr-showroom-daydream",
+  "name": "webvr-furniture-showroom",
   "version": "3.0.1",
   "description": "VR Showroom using Daydream",
   "dependencies": {
@@ -27,11 +27,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Setsun/vr-showroom-daydream.git"
+    "url": "git+https://github.com/Setsun/webvr-furniture-showroom.git"
   },
   "author": "Sean Je Luo <seanjeluo@gmail.com>",
   "license": "MIT",
-  "homepage": "https://setsun.github.io/vr-showroom-daydream",
+  "homepage": "https://setsun.github.io/webvr-furniture-showroom",
   "devDependencies": {
     "gh-pages": "^0.12.0"
   }

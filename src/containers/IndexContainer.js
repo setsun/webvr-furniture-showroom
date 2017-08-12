@@ -41,9 +41,9 @@ const tempData = {
       ]
     },
     table2: {
-      name: 'Wooden Table',
+      name: 'Office Chair',
       price: 123.54,
-      modelId: '#wooden-table',
+      modelId: '#office-chair',
       textureId: null,
       colors: [
         '#4CC3D9',
