@@ -3,19 +3,20 @@
   "version": "3.0.1",
   "description": "VR Showroom using Daydream",
   "dependencies": {
-    "aframe": "^0.6.0",
-    "aframe-animation-component": "^3.2.5",
-    "aframe-layout-component": "^4.2.0",
-    "aframe-look-at-component": "^0.6.0",
-    "aframe-particle-system-component": "^1.0.8",
+    "aframe": "^0.8.2",
+    "aframe-animation-component": "^5.1.1",
+    "aframe-layout-component": "^5.2.0",
+    "aframe-look-at-component": "^0.7.0",
+    "aframe-particle-system-component": "^1.0.11",
     "aframe-svgfile-component": "^1.1.2",
-    "babel-polyfill": "^6.3.14",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
-    "react-scripts": "0.9.5",
-    "redux": "^3.7.2"
+    "ajv": "^6.5.4",
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,6 +34,7 @@
   "license": "MIT",
   "homepage": "https://setsun.github.io/webvr-furniture-showroom",
   "devDependencies": {
-    "gh-pages": "^0.12.0"
+    "gh-pages": "^2.0.0",
+    "webpack": "^3.12.0"
   }
 }
